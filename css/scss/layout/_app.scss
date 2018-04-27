@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - application
+*/
+
+.section.app {
+  height: 986px;
+  font-size: 18px; // [!] init.
+  background-color: #10a8c2;
+
+  & > .grid {
+    position: relative;
+  }
+
+  .section-title {
+    padding-top: 7.667em; //18px => 138px
+
+    h2 {
+      height: 38px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-app.svg);
+      background-repeat: no-repeat;
+    }
+    .title-small {
+      margin-top: 0.75em;
+      font-size: 0.833em;
+      color: #fff;
+    }
+  } //end of .section-title
+
+  .app-info {
+    margin-top: 4.444em;
+
+    li {
+      color: #fff;
+      font-size: 1em;
+      margin-top: 0.94em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+  } //end of .app-info
+
+  .app-image {
+    position: absolute;
+    top: 246px;
+    right: 0;
+    width: 594px;
+    height: 445px;
+    background-image: url(#{$path-image}img-app.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+} //end of .section.app

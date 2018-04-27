@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Engine
+*/
+
+.section.engine{
+  position: relative;
+  top: -13.1em;
+  font-size: 18px;
+
+  .section-title {
+
+    h2 {
+      height: 43px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-engine.svg);
+      background-repeat: no-repeat;
+    }
+    .title-small {
+      margin-top: 0.5em;
+      font-size: 0.833em;
+      color: #fff;
+    }
+  } //end of .section-title
+
+  .engine-info {
+    @include flexbox;
+    @include justify-content(space-between);
+    
+    li {
+      flex-basis: 200px;
+      word-break: keep-all;
+      word-wrap: break-word;
+    }
+
+    .info-title {
+      display: block;
+      font-size: 1.1em;
+      font-weight: 800;
+    }
+    .info-desc {
+      margin-top: 1em;
+      font-size: 0.833em;
+    }
+  }
+
+}

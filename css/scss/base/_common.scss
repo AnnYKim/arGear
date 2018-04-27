@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*!  
+*   COMMON STYLE
+*/
+
+
+.grid {
+    width: 100%;
+    height: 100%;
+    max-width: 960px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    @include mobile {
+      padding: 0 20px;
+    }
+}
+
+::-moz-selection { 
+    background-color: #acf2ff; 
+}
+
+::selection {
+    background-color: #acf2ff;
+}

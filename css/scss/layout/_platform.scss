@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Platform
+*/
+
+.section.platform {
+  height: 820px;
+  font-size: 18px; // [!] init.
+
+  & > .grid {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+
+  .section-title {
+    margin-bottom: 2.222em;
+
+    h2 {
+      .title-logo {
+        display: inline-block;
+        width: 160px;
+        @include text-hidden;
+        background-repeat: no-repeat;
+        background-image: url(#{$path-image}logo.svg);
+        background-size: 100% 100%;
+      }
+      .title-small {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  } //end of .section-title
+
+  .platform-text {
+    font-size: 1em;
+    font-weight: 800;
+  }
+
+  .platform-image {
+    position: relative;
+
+    // [!] ----------------------------------
+    // [!] 아래 스타일링은 반응형일 시 반영할 예정
+    // width: 900px;
+    // height: auto;
+    // margin: 50px 0;
+    // padding-top: 32%;
+    // background-image: url(#{$path-image}img-platform.png);
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // [!] ----------------------------------
+
+    width: 900px;
+    height: 280px;
+    margin: 50px 0;
+    background-image: url(#{$path-image}img-platform.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+  }
+
+  .platform-info {
+
+    li {
+      @include flexbox;
+      margin-top: 0.444em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .info-title {
+      font-weight: 800;
+
+      &:after {
+        display: inline-block;
+        padding: 0 5px;
+        content: ':';
+      }
+    }
+    .info-desc {
+      font-weight: 600;
+    }
+  }
+
+} //end of .section.platform

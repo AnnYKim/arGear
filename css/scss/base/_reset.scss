@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+
+/*!  
+*   RESET STYLE
+*/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, small article, aside, footer, header, nav, address, section, main, time, ol, ul, li, hr, strong, figure { 
+    margin: 0;
+    padding: 0; 
+    border: 0; 
+    vertical-align: baseline; 
+    -webkit-text-size-adjust: none; 
+    font-style: normal; 
+    color: #2a2e2f;
+}
+
+ul, ol, li, dl {
+    list-style: none; 
+}
+
+a:link, a:visited, a:hover, a:active { 
+    text-decoration: none; 
+    @include font-main;
+}
+
+hr { 
+    display: none; 
+}
+
+button { 
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    @include font-main;
+    -webkit-border-radius: 1px;
+    -webkit-apprearance: none;
+}
+
+
+input { 
+    @include ellipsis;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 0; 
+    -webkit-border-radius: 0px;
+    -webkit-apprearance: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+}
+
+
+html, body {
+    position: relative;
+    min-height: 100%;
+    height: 100%; 
+    font-size: 100%;
+    @include font-main;
+    line-height: 1.3;
+    
+}

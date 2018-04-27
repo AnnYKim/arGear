@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+/*!  
+*   VISUAL STYLE
+*/
+
+.section.visual {
+  width: 100%;
+  min-height: 980px;
+  @include horizontal-gradient(#31d6f2, #10a8c2);
+}
