@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/*!  
+*   FOOTER STYLE
+*/
+
+.footer {
+  height: 110px;
+  background-color: #21bbd5;
+  border-top: 1px solid #7ad6e6;
+
+  .copyright {
+    color: #074d77;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 110px;
+  }
+}

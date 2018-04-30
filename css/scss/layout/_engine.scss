@@ -6,21 +6,26 @@
 
 .section.engine{
   position: relative;
-  top: -13.1em;
+  height: 380px;
   font-size: 18px; // [!] init.
 
+  & > .grid {
+    position: relative;
+    top: 0;
+    top: -13.8em;
+
+  }
+  
   .section-title {
 
     h2 {
-      height: 43px;
+      height: 68px;
       @include text-hidden;
       background-image: url(#{$path-image}title-engine.svg);
       background-repeat: no-repeat;
     }
     .title-small {
-      margin-top: 0.5em;
-      font-size: 0.833em;
-      color: #fff;
+      display: none;
     }
   } //end of .section-title
 
@@ -30,9 +35,12 @@
     margin-top: 48px;
     
     li {
+      @include flexbox;
+      @include align-items(center);
+      @include flex-direction(column);
       position: relative;
-      padding-top: 224px;
-      flex-basis: 200px;
+      padding-top: 236px;
+      flex-basis: 240px;
       word-break: keep-all;
       word-wrap: break-word;
 
@@ -52,6 +60,36 @@
           }  
         }
       }
+
+      &:nth-child(1) {
+        @include align-items(flex-start);
+        .info-title,
+        .info-desc {
+          width: 210px;
+        }
+      }
+      &:nth-child(2){
+        flex-basis: 270px;
+        .info-title,
+        .info-desc {
+          width: 194px;
+        }
+      }
+      &:nth-child(3) {
+        flex-basis: 270px;
+        .info-title,
+        .info-desc {
+          width: 188px;
+        }
+      }
+      &:nth-child(4) {
+        @include align-items(flex-end);
+        .info-title,
+        .info-desc {
+          width: 182px;
+        }
+      }
+
     }
 
     .info-title {
@@ -62,6 +100,7 @@
     .info-desc {
       margin-top: 1em;
       font-size: 0.833em;
+      line-height: 150%;
     }
   }
 

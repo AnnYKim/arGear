@@ -9,18 +9,18 @@
   overflow-x: hidden;
   height: 586px;
   font-size: 18px; // [!] init.
-  background-color: #f2f8ff;
+  background-color: #d9eefb;
 
-  .cloud-bg { //grid 영역 밖에 있음
+  .bg-cloud { //grid 영역 밖에 있음
     position: absolute;
     top: 0;
     left: 50%;
-    width: 1152px;
+    width: 1040px;
     height: 100%;
     margin-left: -530px;
     background-image: url(#{$path-image}deco-cloud.png);
     background-size: 336px 262px;
-    background-position: 100% 120px;
+    background-position: 100% 100px;
     background-repeat: no-repeat;
   }
 
@@ -47,15 +47,15 @@
 
   .container {
     @include flexbox;
-    @include justify-content(space-between);
+    //@include justify-content(space-between);
     @include flex-wrap(wrap);
     margin-top: 3.8em;
 
     .cloud-image {
-      flex-basis: 50%;
+      width: 441px;
       height: 320px;
       background-image: url(#{$path-image}img-cloud.png);
-      background-size: 441px 297px;
+      background-size: 441px 309px;
       background-repeat: no-repeat;
   
     } //end of .cloud-image
@@ -66,14 +66,39 @@
       @include flexbox;
       @include flex-direction(column);
       @include justify-content(center);
+      margin-left: 56px;
       font-weight: 600;
       font-size: 0.833em;
 
       li {
+        @include flexbox;
         margin-top: 1.056em;
+
+          &:before {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: -1px;
+            margin-right: 13px;
+            color: #074d77;
+            background-color: #cee2ed;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 21px;
+        }
   
         &:first-child {
           margin-top: 0;
+        }
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}){
+            &:before {
+              content: '#{$i}';
+            }
+          }
         }
       }
     } //end of .cloud-info

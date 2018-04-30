@@ -27,19 +27,17 @@
   }
 
   .visual-logo-svg {
+    overflow: visible;
     position: absolute;
     left: 50%;
     bottom: 120px;
     transform: translateX(-50%);
     width: 524px;
     height: 113px;
-    overflow: visible;
 
-    .path_g,
-    .path_e,
-    .path_a_2,
-    .path_r_2 {
+    .st0 {
       will-change: transform;
+      transform: translateZ(0);
       transition: transform 30s;
       transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) //easeInOutBack
     }

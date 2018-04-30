@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Virtual
+*/
+
+.section.virtual {
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 170px;
+  font-size: 18px; // [!] init.
+  background-color: #21bbd5;
+
+  & > .grid {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+
+  .container.economic{
+    position: relative;
+    height: 560px;
+
+    .section-title {
+      position: relative;
+  
+      h2 {
+        height: 38px;
+        margin-bottom: 50px;
+        @include text-hidden;
+        background-image: url(#{$path-image}title-virtual-1.svg);
+        background-repeat: no-repeat;
+      }
+  
+    } //end of .section-title
+
+    .economic-text {
+      max-width: 340px;
+      font-size: 1em;
+      color: #fff;
+      word-break: keep-all;
+      line-height: 160%;
+      color: #dbffff;
+    }
+
+    .bg-virtual-1 {
+      position: absolute;
+      top: -28px;
+      right: 0;
+      width: 506px;
+      height: 469px;
+      background-image: url(#{$path-image}deco-virtual-1.png);
+      background-repeat: no-repeat;
+    }
+
+  } //end of .container.economic
+
+  .container.coin{
+    position: relative;
+    @include flexbox;
+    @include justify-content(flex-end);
+    margin-bottom: 54px;
+
+    .container-right {
+
+    }
+
+    .section-title {
+      position: relative;
+      padding-left: 38px; //*
+  
+      h2 {
+        height: 38px;
+        @include text-hidden;
+        background-image: url(#{$path-image}title-virtual-2.svg);
+        background-repeat: no-repeat;
+      }
+  
+    } //end of .section-title
+
+    .bg-virtual-2 {
+      position: absolute;
+      top: -96px;
+      left: 0;
+      width: 306px;
+      height: 309px;
+      background-image: url(#{$path-image}deco-virtual-2.png);
+      background-repeat: no-repeat;
+    }
+
+    .coin-text {
+      max-width: 430px;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      padding-left: 38px; //*
+      font-size: 1em;
+      color: #fff;
+      word-break: keep-all;
+      line-height: 160%;
+      color: #dbffff;
+    }
+
+    .virtual-img {
+      width: 549px;
+      height: 140px;
+      background-image: url(#{$path-image}img-virtual.png);
+      background-repeat: no-repeat;
+
+    }
+
+
+  } //end of .container.coin
+
+  .virtual-info { // 그리드 영역 밖에 있음
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.08);
+
+    & > .grid {
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+    }
+
+    .virtual-info-text {
+      color: #074d77;
+      font-weight: 600;
+      letter-spacing: -0.005rem;
+      line-height: 160%;
+    }
+  } //end of .virtual-info
+
+}
