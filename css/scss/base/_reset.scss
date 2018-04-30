@@ -12,7 +12,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, small article, aside,
     vertical-align: baseline; 
     -webkit-text-size-adjust: none; 
     font-style: normal; 
-    color: #2a2e2f;
+    color: $color-black; //#2a2e2f;
 }
 
 ul, ol, li, dl {
@@ -62,5 +62,7 @@ html, body {
     font-size: 100%;
     @include font-main;
     line-height: 1.3;
-    
+    ///
+    min-width: 1020px;
+    ///
 }

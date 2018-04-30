@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - DPOARE
+*/
+
+.section.dpo {
+  position: relative;
+  overflow-x: hidden;
+  height: 586px;
+  font-size: 18px; // [!] init.
+
+  & > .grid {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+
+}

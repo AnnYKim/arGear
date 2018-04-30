@@ -5,7 +5,62 @@
 */
 
 .section.visual {
+  position: relative;
   width: 100%;
   min-height: 980px;
   @include horizontal-gradient(#31d6f2, #10a8c2);
+
+  .deco-visual {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    width: 950px;
+    height: 696px;
+    transform: translateX(-50%);
+    background-image: url(#{$path-image}deco-visual.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .visual-logo {
+    display: none;
+  }
+
+  .visual-logo-svg {
+    position: absolute;
+    left: 50%;
+    bottom: 120px;
+    transform: translateX(-50%);
+    width: 524px;
+    height: 113px;
+    overflow: visible;
+
+    .path_g,
+    .path_e,
+    .path_a_2,
+    .path_r_2 {
+      will-change: transform;
+      transition: transform 30s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) //easeInOutBack
+    }
+  }
+
+
 }
+
+$time: 2.5s;
+
+.path_g {
+  @include animation($time, visualTxt_up);
+}
+.path_e {
+  @include animation($time, visualTxt_down);
+}
+.path_a_2 {
+  @include animation($time, visualTxt_up);
+}
+.path_r_2 {
+  @include animation($time, visualTxt_down);
+}
+ 
+ 

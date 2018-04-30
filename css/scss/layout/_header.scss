@@ -5,6 +5,7 @@
 */
 
 .header {
+  z-index: $zindex-important;
   position: absolute;
   top: 0;
   left: 0;

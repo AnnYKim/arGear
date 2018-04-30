@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Cloud
+*/
+
+.section.cloud {
+  position: relative;
+  overflow-x: hidden;
+  height: 586px;
+  font-size: 18px; // [!] init.
+  background-color: #f2f8ff;
+
+  .cloud-bg { //grid 영역 밖에 있음
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1152px;
+    height: 100%;
+    margin-left: -530px;
+    background-image: url(#{$path-image}deco-cloud.png);
+    background-size: 336px 262px;
+    background-position: 100% 120px;
+    background-repeat: no-repeat;
+  }
+
+  & > .grid {
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+
+  .section-title {
+
+    h2 {
+      height: 31px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-cloud.svg);
+      background-repeat: no-repeat;
+    }
+    .title-small {
+      margin-top: 1.1em;
+      font-size: 0.888em;
+    }
+
+  } //end of .section-title
+
+  .container {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    margin-top: 3.8em;
+
+    .cloud-image {
+      flex-basis: 50%;
+      height: 320px;
+      background-image: url(#{$path-image}img-cloud.png);
+      background-size: 441px 297px;
+      background-repeat: no-repeat;
+  
+    } //end of .cloud-image
+  
+    .cloud-info {
+      z-index: 1;
+      position: relative;
+      @include flexbox;
+      @include flex-direction(column);
+      @include justify-content(center);
+      font-weight: 600;
+      font-size: 0.833em;
+
+      li {
+        margin-top: 1.056em;
+  
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    } //end of .cloud-info
+
+  } //end of .container
+
+} //end of .section.cloud

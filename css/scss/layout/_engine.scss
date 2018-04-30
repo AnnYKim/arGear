@@ -7,7 +7,7 @@
 .section.engine{
   position: relative;
   top: -13.1em;
-  font-size: 18px;
+  font-size: 18px; // [!] init.
 
   .section-title {
 
@@ -27,11 +27,31 @@
   .engine-info {
     @include flexbox;
     @include justify-content(space-between);
+    margin-top: 48px;
     
     li {
+      position: relative;
+      padding-top: 224px;
       flex-basis: 200px;
       word-break: keep-all;
       word-wrap: break-word;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 180px;
+        height: 180px;
+        content: '';
+      }
+
+      @for $i from 1 through 4 { //background image
+        &:nth-child(#{$i}){
+          &:before {
+            background-image: url(#{$path-image}deco-engine-#{$i}.png);
+          }  
+        }
+      }
     }
 
     .info-title {

@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 /*!
-    nykim@nomadconnection.com
     nykim@nykim.net
-    2018-04-27 15:30
+    nykim@nomadconnection.com
+    2018-04-30 12:10
+  !  
 */
-
 
 // 웹폰트
 
@@ -14,6 +14,7 @@
 @import "helpers/variables"; 
 @import "helpers/mixins";
 @import "helpers/mediaQueries";
+@import "helpers/animations";
 
 // 기본 스타일
 @import "base/reset";
@@ -23,6 +24,8 @@
 // 레이아웃 
 @import "layout/header"; //최상단 헤더
 @import "layout/visual"; //비주얼 영역
-@import "layout/platform"; //섹션 - platform
-@import "layout/app"; //섹션 - application
-@import "layout/engine"; //섹션 - engine
+@import "layout/platform"; //섹션 - Platform
+@import "layout/app"; //섹션 - Application
+@import "layout/engine"; //섹션 - Engine
+@import "layout/cloud"; //섹션 - Cloud
+@import "layout/dpo"; //섹션 - DPOARE
