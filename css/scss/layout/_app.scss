@@ -50,6 +50,7 @@
   .section-title {
 
     h2 {
+      width: 214px;
       height: 68px;
       @include text-hidden;
       background-image: url(#{$path-image}title-app.svg);
@@ -58,9 +59,11 @@
       // ==============
       // === 반응형 ====
         @include tablet {
+          width: 201px;
           height: 64px;
         }
         @include mobile {
+          width: 195px;
           height: 62px;
         }
       // ==============

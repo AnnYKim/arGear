@@ -23,18 +23,43 @@
 </head>
 <body>
   <div class="wrap">
-
-      <!-- <div class="test" style="position:fixed; z-index:1000; bottom:0; right:0; padding:20px; background:navy; color:#fff; width:120px; font-size: 12px; line-height: 1.7;">
-          Width:&nbsp; <span class="width" style="font-weight:700; color:#fff;font-size: 14px;">0</span>px<br>
-          Size:&nbsp; <span class="size" style="font-weight:700; color:#fff;font-size: 14px;">0</span>
-        </div>
-       -->
-
+        
     <header class="header">
       <div class="grid">
-          <h1 class="header-logo">AR GEAR</h1>
+        <h1 class="header-logo"><a href="#">AR GEAR</a></h1>
+        <div class="header-bg"></div>
+        <div class="header-container">
+          <ul class="gnb clearfix">
+            <li class="nav-01">
+              <a class="nav-menu" href="#">Platform</a>
+            </li>
+            <li class="nav-02">
+                <a class="nav-menu" href="#">Application</a>
+            </li>
+            <li class="nav-03">
+                <a class="nav-menu" href="#">Engine</a>
+            </li>
+            <li class="nav-04">
+                <a class="nav-menu" href="#">Cloud</a>
+            </li>
+            <li class="nav-05">
+                <a class="nav-menu" href="#">DPOARE</a>
+            </li>
+            <li class="nav-06">
+                <a class="nav-menu" href="#">VR System</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
+      <button class="hamburger">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="nav-bg"></div>
+      </header>
     <!--//end of .header -->
 
     <section class="section visual">
@@ -70,6 +95,23 @@
           </form>
 
         </div>
+      </div>
+
+      <div class="deco-mini-container">
+
+          <div class="circle deco-mini-1 blur-7"></div>
+          <div class="circle deco-mini-2 blur-7"></div>
+          <div class="circle deco-mini-3"></div>
+          <div class="circle deco-mini-4 blur-3"></div>
+          <div class="circle deco-mini-5 blur-3"></div>
+          <div class="circle deco-mini-6 blur-7"></div>
+          <div class="square deco-mini-7 blur-3"></div>
+          <div class="square deco-mini-8 blur-3"></div>
+
+          <svg xmlns="http://www.w3.org/2000/svg"  height="0"><defs><filter id="blur7" x="0" y="0"><feGaussianBlur in="SourceGraphic" stdDeviation="7"/></filter></defs></svg>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="0"><defs><filter id="blur3" x="0" y="0"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></defs></svg>
+
+
       </div>
     </section>
     <!--//end of .visual -->
@@ -254,49 +296,8 @@
   <!-- [수정] 현재 CDN 사용 중인데 폴더에서 불러오도록 수정 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="js/ui.js"></script>
 
-<!-- 
-  <script>
-  
- 
-var breakPoint = [580, 768, 960, 1024];
-
-
-function alertMySize(){
-  $(".width").text($(window).width());
-  if($(window).width()<breakPoint[0]){
-    $(".size").text("모바일")
-  }
-  if($(window).width()>breakPoint[0]){
-    $(".size").text("태블릿 (작음)")
-  }
-  if($(window).width()>breakPoint[1]){
-    $(".size").text("태블릿 (큼)")
-  }
-  if($(window).width()>breakPoint[2]){
-    $(".size").text("pc-sm")
-  }
-  if($(window).width()>breakPoint[3]){
-    $(".size").text("pc")
-  }
-}
-
-$(window).on('load resize',function(){
-  alertMySize();
-});
-
-
-
-</script> -->
-
-  <script>
-  
-    // var visualLogoAnime = anime({
-    //   targets: ".visual-logo-svg .path_a",
-    //   translateY: 100,
-    //   loop: true,
-    // });
-  </script>
 
  </div>
 </body>

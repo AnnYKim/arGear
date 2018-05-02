@@ -4,6 +4,11 @@
 *   HEADER STYLE
 */
 
+  // 변수 //
+  $header-pedding: 50px;
+  $header-height-ta: 70px;
+  ////////
+
 .header {
   z-index: $zindex-important;
   position: absolute;
@@ -11,9 +16,51 @@
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.45);
+  
+  &.sticky {
+    position: fixed;
+    top: -80px;
+    transition: margin .5s;
+  }
+
+  .nav-bg {
+    z-index: 5hamburg0;
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform .55s cubic-bezier(0.39, 0.575, 0.565, 1);
+    background-color: #fff;
+  }
+
+  &.opened {
+      .header-container {
+        transform: translateX(0%);
+        opacity: 1;
+        transition: opacity .4s .25s;
+      }
+      .hamburger .burger-icon span {
+        background-color: #565d61;
+        transition: background-color .3s;
+      }
+        .nav-bg {
+            transform: scale(50);
+            transition: transform .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+  }
+
+  @include tablet-lg {
+      position: fixed !important;
+      top: 0px !important;
+      height: $header-height-ta;
+  }
 
   & > .grid {
+    position: relative;
     @include flexbox;
     @include align-items(center);
     @include justify-content(flex-start); //수정될 수 있을 듯
@@ -22,12 +69,205 @@
   }
 
   .header-logo {
-    width: 110px;
-    height: 41px;
+    width: 80px;
+    height: 19px;
     @include text-hidden;
     background-repeat: no-repeat;
     background-image: url(#{$path-image}logo.svg);
     background-size: 100% 100%;
+    cursor: pointer;
+
+    @include tablet-lg {
+      display: none;
+    }
   }
+
+  @include tablet-lg {
+    background-color: transparent;
+  }
+
+  .header-container {
+    overflow: auto;
+    display: block;
+    margin-left: 98px;
+
+    // === 반응형 ===
+    @include tablet-lg {
+      opacity: 0;
+      z-index: 10;
+      @include flex-direction(column);
+      @include justify-content(flex-start);
+      position: absolute;
+      top: $header-height-ta;
+      left: 0;
+      right: initial;
+      width: 100%;
+      height: 80vh;
+      margin-left: 0;
+      padding: 0 20%;
+      transform: translateX(-100%);
+      box-sizing: border-box;
+      transition: opacity .4s .25s;
+    }
+    @include tablet {
+        min-height: 0px;
+    }
+    @include mobile {
+        padding: 0 46px;
+        top: $header-height-ta;
+    }
+
+  [class^=nav-] {
+    cursor: pointer;
+
+    ::-moz-selection { 
+        background-color: transparent !important;
+    }
+    
+    ::selection {
+        background-color: transparent !important;
+    }
+  }
+
+  .nav-menu {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.02rem;
+    color: #444;
+    transition: color .3s;
+    cursor: pointer;
+
+    &:hover {
+      color: #2a6e8f;
+      transition: color .3s;
+    }
+
+    @include tablet-lg {
+        font-size: 21px;
+    }
+    @include tablet {
+        font-size: 19px;
+    }
+    @include mobile {
+        font-size: 18px;
+    }
+  }
+
+} //end of .header-container
+
+.header-bg {
+  display: none;
+  transition: background-color 2ms;
+
+    @include tablet-lg {
+        display: block;
+        z-index: 15;
+        position: relative;
+        width: 100%;
+        height: $header-height-ta;
+    }
+
+}//end of .header-bg
+
+.gnb {
+  @include flexbox;
+  @include align-items(center);
+
+  // === 반응형 ===
+  @include tablet-lg {
+    @include flex-direction(column);
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+    @include mobile {
+        margin-top: 10vh;
+    }
+
+    [class^=nav-] {
+      margin-left: 45px;
+
+      a {
+          display: block;
+          width: 100%;
+          height: 100%;
+      }
+
+      @include pc-sm {
+          margin-left: 32px;
+      }
+      @include tablet-lg {
+          margin-left: 0;
+          margin-top: 36px;
+          width: 80%;
+          text-align: center;
+      }
+      @include mobile {
+          margin-top: 32px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+        margin-top: 0;
+      }
+    }
+  }//end of .gnb
+
+
+  .hamburger {
+    z-index: 100;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background: none;
+    border: none;
+    outline: 0;
+
+    @include tablet-lg {
+        display: block;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:hover > .burger-icon span {
+        background-color: #565d61;
+        transition: background-color .3s;
+    }
+
+    & > .burger-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+        span {
+            position: relative;
+            display: block;
+            width: 24px;
+            height: 3px;
+            transition: transform .2s;
+            //background-color: #fff;
+            background-color: #333;
+            transition: background-color .3s;
+
+            &:first-child {
+                top: -4px;
+            }
+            &:nth-child(3) {
+                opacity: 1;
+                top: 4px;
+                //width: 10px;
+                //margin-left: 12px;
+            }
+          }
+        }
+      }//end of .hamburger
 
 }//end of .header

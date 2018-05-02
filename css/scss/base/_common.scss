@@ -52,8 +52,21 @@ html, body {
 }
 
 
+.noScroll {
+    height: 100%;
+    overflow: hidden;
+
+    .header {
+        position: fixed;
+    }
+    .header-container {
+        margin-right: 15px;
+    }
+}
+
 [class^=deco-],
 [class^=bg-],
+[class^=deco-mini-]
 [class$=-image],
 [class$=-img] {
     user-select: none;

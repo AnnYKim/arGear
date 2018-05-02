@@ -57,7 +57,8 @@
       position: relative;
   
       h2 {
-        height: 38px;
+        // height: 38px;
+        width: 295px;
         margin-bottom: 50px;
         @include text-hidden;
         background-image: url(#{$path-image}title-virtual-1.svg);
@@ -67,11 +68,13 @@
         // === 반응형 ====
         @include tablet {
           margin-bottom: 30px;
-          height: 36px;
+          width: 279px;
+          //height: 36px;
         }
         @include mobile {
           margin-bottom: 20px;
-          height: 34px;
+          width: 264px;
+          //height: 34px;
         }
         // ==============
       }
@@ -188,7 +191,8 @@
       
   
       h2 {
-        height: 38px;
+        // height: 38px;
+        width: 219px;
         @include text-hidden;
         background-image: url(#{$path-image}title-virtual-2.svg);
         background-repeat: no-repeat;
@@ -197,11 +201,13 @@
         // === 반응형 ====
         @include tablet {
           margin-bottom: 30px;
-          height: 36px;
+          // height: 36px;
+          width: 207px;
         }
         @include mobile {
           margin-bottom: 20px;
-          height: 34px;
+          width: 196px;
+          // height: 34px;
         }
         // ==============
       }

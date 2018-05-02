@@ -27,6 +27,7 @@
   .section-title {
 
     h2 {
+      width: 130px;
       height: 68px;
       @include text-hidden;
       background-image: url(#{$path-image}title-engine.svg);
@@ -35,9 +36,11 @@
       // ==============
       // === 반응형 ====
         @include tablet {
+          width: 122px;
           height: 64px;
         }
         @include mobile {
+          width: 118px;
           height: 62px;
         }
       // ==============
@@ -70,7 +73,7 @@
       @include flex-direction(column);
       position: relative;
       padding-top: 13.111em;
-      flex-basis: 240px;
+      @include flex-basis(240px);
       word-break: keep-all;
       word-wrap: break-word;
       box-sizing: border-box;
@@ -88,6 +91,8 @@
       &:before {
         position: absolute;
         top: 0;
+        left: 50%;
+        transform: translateX(-50%);
         display: block;
         width: 180px;
         height: 180px;
@@ -130,7 +135,7 @@
           }
           @include mobile {
             @include align-items(center);
-            flex-basis: 50%;
+            @include flex-basis(50%);
             padding-left: 0px;
           }
         // ==============
@@ -149,12 +154,12 @@
         }
       }
       &:nth-child(2){
-        flex-basis: 270px;
+        @include flex-basis(270px);
 
         // ==============
         // === 반응형 ====
           @include tablet-lg {
-            flex-basis: 258px;
+            @include flex-basis(258px);
           }
           @include tablet {
             @include align-items(flex-end);
@@ -162,7 +167,7 @@
           }
           @include mobile {
             @include align-items(center);
-            flex-basis: 50%;
+            @include flex-basis(50%);
             padding-right: 0px;
           }
         // ==============
@@ -182,12 +187,12 @@
         }
       }
       &:nth-child(3) {
-        flex-basis: 270px;
+        @include flex-basis(270px);
 
         // ==============
         // === 반응형 ====
           @include tablet-lg {
-            flex-basis: 258px;
+            @include flex-basis(258px);
           }
           @include tablet {
             @include align-items(flex-start);
@@ -196,7 +201,7 @@
           }
           @include mobile {
             @include align-items(center);
-            flex-basis: 50%;
+            @include flex-basis(50%);
             padding-left: 0px;
           }
         // ==============
@@ -226,13 +231,13 @@
           }
           @include mobile {
             @include align-items(center);
-            flex-basis: 50%;
+            @include flex-basis(50%);
             padding-right: 0px;
           }
         // ==============
         .info-title,
         .info-desc {
-          width: 182px;
+          width: 197px;
 
           // ==============
           // === 반응형 ====

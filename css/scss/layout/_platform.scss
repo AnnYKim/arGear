@@ -18,6 +18,7 @@
     // ==============
     // === 반응형 ====
     @include pc-sm {
+      display: block;
       padding-top: 120px;
       padding-bottom: 120px;
       margin-left: 0;
@@ -145,8 +146,6 @@
         height: auto;
         margin: 50px 0;
         padding-top: 20%;
-        background-image: url(#{$path-image}img-platform.png);
-        background-repeat: no-repeat;
         background-size: contain;
       }
       @include tablet {

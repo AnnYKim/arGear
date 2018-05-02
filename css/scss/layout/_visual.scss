@@ -4,34 +4,98 @@
 *   VISUAL STYLE
 */
 
+////// 변수 //////
+$pc-width: 530px;
+$ta-lg-width: 510px;
+$ta-width: 490px;
+
+
 .section.visual {
   position: relative;
   width: 100%;
   height: 980px;
   @include horizontal-gradient(#31d6f2, #10a8c2);
 
+    // ==============
+    // === 반응형 ====
+    @include tablet-lg {
+      height: 870px;
+    }
+    @include tablet {
+      height: 780px;
+    }
+    @include mobile {
+      height: 580px;
+    }
+  // ==============
 
   & > .gird {
     position: relative;
   }
   .deco-visual {
+    z-index: 5;
     position: absolute;
     left: 50%;
-    top: 126px;
-    width: 891px;
+    top: 132px;
+    width: 950px;
     height: 760px;
-    margin-left: 62px;
+    margin-left: 34px;
     transform: translateX(-50%);
     background-image: url(#{$path-image}deco-visual.png);
     background-size: 100%;
     background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include pc-sm {
+        top: 144px;
+        width: 860px;
+        height: 688px;
+      }
+      @include tablet-lg {
+        top: 90px;
+        width: 780px;
+        height: 624px;
+      }
+      @include tablet {
+        top: 70px;
+        width: 680px;
+        height: 544px; 
+      }
+      @include mobile {
+        background-image: url(#{$path-image}deco-visual-mo.png);
+        top: 80px;
+        width: 440px;
+        height: 357px;
+        margin-left: 14px;
+      }
+    // ==============
   }
 
   .container {
+    z-index: 10;
     position: absolute;
+    width: $pc-width;
     left: 50%;
     bottom: 106px;
     transform: translateX(-50%);
+    box-sizing: border-box;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: $ta-lg-width;
+        bottom: 90px;
+      }
+      @include tablet {
+        width: 480px;
+      }
+      @include mobile {
+        bottom: 25px;
+        width: 100%;
+        padding: 0 20px;
+      }
+    // ==============
   }
 
   .visual-logo {
@@ -39,9 +103,27 @@
   }
 
   .visual-logo-svg {
+    display: block;
     overflow: visible;
-    width: 524px;
+    width: ($pc-width);
     height: 113px;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: $ta-lg-width;
+        height: 109px;
+      }
+      @include tablet {
+        width: $ta-width;
+        height: 105px;
+      }
+      @include mobile {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+      }
+    // ==============
 
     .st0 {
       will-change: transform;
@@ -52,13 +134,32 @@
   }
 
   .title-small { //"support decentral ar world"
-    width: 504px;
+    width: ($pc-width - 6);
     height: 39px;
     margin-top: 16px;
     margin-bottom: 36px;
     background-image: url(#{$path-image}title-visual.svg);
     background-size: 100%;
     background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: ($ta-lg-width - 6);
+        height: 32px;
+      }
+      @include tablet {
+        width: ($ta-width - 6);
+        height: 30px;
+      }
+      @include mobile {
+        width: 80%;
+        height: auto;
+        padding-top: 7%;
+        margin: 10px auto 18px;
+        background-size: contain;
+      }
+    // ==============
 
   }
 
@@ -69,7 +170,7 @@
     display: -o-flex;
     display: flex;
     position: relative;
-    width: 530px;
+    width: 100%;
 
     label {
       display: none;
@@ -83,7 +184,7 @@
       color: #0c8094;
       font-weight: 600;
       padding-left: 32px;
-      padding-right: 180px;
+      padding-right: 76px;
       border-radius: 35px;
       background-color: rgba(255, 255, 255, 0.5);
       border: 1px solid #0dc8e8;
@@ -100,6 +201,17 @@
           transition: background-color .3s;
         }
       }
+
+      // ==============
+      // === 반응형 ====
+        // @include tablet-lg {
+        //   height: 64px;
+        // }
+        @include mobile {
+          height: 60px;
+          padding-right: 68px;
+        }
+      // ==============
     }
 
     .form-button {
@@ -125,6 +237,23 @@
         background-color: #fff;
         transition: background-color .3s;
       }
+
+      // ==============
+      // === 반응형 ====
+        // @include tablet-lg {
+        //   top: 7px;
+        //   width: 50px;
+        //   height: 50px;
+        //   background-size: 29px 22px;
+        // }
+        @include mobile {
+          top: 7px;
+          width: 46px;
+          height: 46px;
+          background-size: 27px 21px;
+          background-position: 50% 12px;
+        }
+      // ==============
     }
 
     // ================= //
@@ -258,4 +387,108 @@ $time: 2.5s;
   @include animation($time, visualTxt_down);
 }
  
- 
+.deco-mini-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  width: 2120px;
+  transform: translateX(-50%);
+  height: 100%;
+  overflow: hidden;
+
+  .circle {
+    position: absolute;
+    background-image: url(#{$path-image}deco-visual-mini-1.png);
+    background-size: 90%; //블러 시 깨짐 현상 때문에
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  } 
+
+  .square {
+    position: absolute;
+    background-image: url(#{$path-image}deco-visual-mini-2.png);
+    background-size: 90%; //블러 시 깨짐 현상 때문에
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .deco-mini-1 { //우측 하단
+    bottom: -200px;
+    right: 0; 
+    width: 560px;
+    height: 560px;
+    opacity: .33;
+  }
+  
+  .deco-mini-2 { //우측 중앙
+    top: 160px;
+    right: 600px;
+    width: 250px;
+    height: 250px;
+    opacity: .6;
+  }
+  
+  .deco-mini-3 { //우측 최상단
+    top: 30px;
+    right: 270px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .deco-mini-4 { //우측 상단 작은 원
+    top: 220px;
+    right: 186px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .deco-mini-5 { //좌측 최상단 작은 원
+    top: 58px;
+    left: 426px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .deco-mini-6 { //좌측 하단 큰 원
+    bottom: 158px;
+    left: 198px;
+    width: 320px;
+    height: 320px;
+    opacity: 0.6;
+  }
+
+  .deco-mini-7 { //우측 네모
+    top: 424px;
+    right: 412px;
+    width: 62px;
+    height: 62px;
+    opacity: .33;
+  }
+
+  .deco-mini-8 { //좌측 네모
+    top: 316px;
+    left: 176px;
+    width: 54px;
+    height: 54px;
+  }
+   
+   
+   
+}
+
+.blur-7 { 
+  filter: url(#blur7); 
+}
+
+.blur-3 { 
+  filter: url(#blur3); 
+}
+
+html[data-agent*="Trident"] .circle {
+  background-image: url(#{$path-image}deco-visual-mini-1-blur.png); //IE에서는 SVG 필터 대신 이미지로 대체
+}
+html[data-agent*="Trident"] .square {
+  background-image: url(#{$path-image}deco-visual-mini-2-blur.png); //IE에서는 SVG 필터 대신 이미지로 대체
+}
+
