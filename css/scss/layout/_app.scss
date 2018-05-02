@@ -6,22 +6,64 @@
 
 .section.app {
   position: relative;
-  height: 986px;
+  //height: 986px;
+  height: auto;
+  padding-top: 136px; 
+  padding-bottom: 700px;
   font-size: 18px; // [!] init.
   background-color: #10a8c2;
 
+  // ==============
+  // === 반응형 ====
+
+  @include pc-sm {
+    padding-top: 120px;
+  }
+
+  @include tablet-lg {
+    padding-bottom: 650px;
+    font-size: 16px;
+    padding-top: 100px;
+  }
+
+  @include tablet {
+    padding-top: 80px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 250px;
+    font-size: 13px;
+  }
+
+  @include mobile-sm {
+    font-size: 12px;
+  }
+  
+  // ==============
+
   & > .grid {
+    z-index: 1;
     position: relative;
   }
 
   .section-title {
-    padding-top: 7.667em; //18px => 138px
 
     h2 {
       height: 68px;
       @include text-hidden;
       background-image: url(#{$path-image}title-app.svg);
       background-repeat: no-repeat;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          height: 61px;
+        }
+        @include mobile {
+          height: 52px;
+        }
+      // ==============
     }
     .title-small {
       display: none;
@@ -29,12 +71,22 @@
   } //end of .section-title
 
   .app-info {
+    z-index: 1;
+    position: relative;
     margin-top: 4em;
 
     li {
       color: #fff;
       font-size: 1em;
       margin-top: 0.94em;
+
+
+      // ==============
+      // === 반응형 ====
+      @include mobile {
+        letter-spacing: -0.004em;
+      }
+      // ==============
 
       &:first-child {
         margin-top: 0;
@@ -52,20 +104,74 @@
     background-image: url(#{$path-image}img-app.png);
     background-size: 100%;
     background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+  
+    @include pc-sm {
+      top: 260px;
+      right: 20px;
+    }
+  
+    @include tablet-lg {
+      top: 280px;
+      width: 560px;
+      height: 415px;
+    }
+  
+    @include tablet {
+      width: 480px;
+      height: 381px;
+      background-image: url(#{$path-image}img-app-mo.png);
+
+    }
+  
+    @include mobile {
+      // top: 240px;
+      // padding: 0;
+      // width: 290px;
+      // height: 230px;
+      // background-size: 100%;
+
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 0;
+      width: 100%;
+      height: auto;
+      margin-top: 26px;
+      padding-top: 80%; 
+      background-image: url(#{$path-image}img-app-mo.png);
+    }
+
+    @include mobile-sm {
+      // top: 240px;
+    }
+    
+    // ==============
   }
 
 
 
   .bg-app { // 그리드 밖에 있음
     position: absolute;
-    top: 200px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     width: 1920px;
-    height: 1268px;
+    height: 336px;
     background-image: url(#{$path-image}bg-app.png);
     background-size: 100%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
+
+    @include tablet-lg {
+    }
+
+    @include mobile {
+      width: 300%;
+      background-position: 37vw 50%;
+    }
   }
 
 

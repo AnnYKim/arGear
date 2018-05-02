@@ -116,16 +116,16 @@
     background-color: rgba(255, 255, 255, 0.08);
 
     & > .grid {
-      padding-top: 50px;
+      padding-top: 52px;
       padding-right: 30px;
-      padding-bottom: 50px;
+      padding-bottom: 62px;
     }
 
     .virtual-info-text {
       color: #074d77;
-      font-weight: 600;
+      //font-weight: 600;
       letter-spacing: -0.005rem;
-      line-height: 160%;
+      line-height: 166%;
     }
   } //end of .virtual-info
 

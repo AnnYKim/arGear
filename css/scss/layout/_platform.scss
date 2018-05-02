@@ -5,18 +5,60 @@
 */
 
 .section.platform {
-  height: 822px;
-  font-size: 18px; // [!] init.
 
   & > .grid {
     max-width: 982px; // [!] 이 섹션만 너비가 다름
+    padding-top: 136px;
+    padding-bottom: 136px;
+    font-size: 18px; // [!] init.
     @include flexbox;
     @include flex-direction(column);
     @include justify-content(center);
+
+    // ==============
+    // === 반응형 ====
+
+    @include pc-sm {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include tablet-lg {
+      padding-top: 90px;
+      padding-bottom: 90px;
+      font-size: 16px;
+    }
+
+    @include tablet {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      font-size: 15px;
+    }
+
+    @include mobile {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 13px;
+    }
+    
+    // ==============
+
   }
 
   .section-title {
     margin-bottom: 2.222em;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        //top: 3px;
+      }
+      @include mobile {
+        margin-bottom: 18px;
+      }
+    // ==============
 
     h2 {
       position: relative;
@@ -28,7 +70,15 @@
         background-repeat: no-repeat;
         background-image: url(#{$path-image}logo.svg);
         background-size: 100% 100%;
+
+        // ==============
+        // === 반응형 ====
+          @include mobile {
+            width: 102px;
+          }
+        // ==============
       }
+
       .title-small {
         position: absolute;
         top: 7px;
@@ -37,6 +87,15 @@
         background-repeat: no-repeat;
         background-image: url(#{$path-image}title-platform.svg);
         background-size: 100% 100%;
+
+        // ==============
+        // === 반응형 ====
+          @include mobile {
+            width: 56px;
+            height: 17px;
+            margin-left: 4px;
+          }
+        // ==============
       }
 
       &:after {
@@ -46,6 +105,20 @@
         margin-top: -4px;
         background-color: #d4dee1;
         content: '';
+
+        // ==============
+        // === 반응형 ====
+          @include tablet-lg {
+            margin-top: 10px;
+          }
+          @include tablet {
+            margin-top: 20px;
+          }
+          @include mobile {
+            margin-top: 25px;
+          }
+        // ==============
+
       }
     }
   } //end of .section-title
@@ -53,29 +126,43 @@
   .platform-text {
     font-size: 1.1em;
     font-weight: 600;
+    line-height: 160%;
     letter-spacing: -0.02rem;
+    word-break: keep-all;
   }
 
   .platform-image {
     position: relative;
-
-    // [!] ----------------------------------
-    // [!] 아래 스타일링은 반응형일 시 반영할 예정
-    // width: 931px;
-    // height: auto;
-    // margin: 50px 0;
-    // padding-top: 32%;
-    // background-image: url(#{$path-image}img-platform.png);
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // [!] ----------------------------------
-
     width: 931px;
     height: 206px;
     margin: 80px 0;
     background-image: url(#{$path-image}img-platform.png);
     background-size: 100%;
     background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include pc-sm {
+        width: 100%;
+        height: auto;
+        margin: 50px 0;
+        padding-top: 20%;
+        background-image: url(#{$path-image}img-platform.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      @include tablet {
+        width: 70%;
+        margin: 60px auto;
+        padding-top: 55%;
+        background-image: url(#{$path-image}img-platform-mo.png);
+      }
+      @include mobile {
+        width: 100%;
+        margin: 40px auto;
+        padding-top: 79%;
+      }
+    // ==============
 
   }
 
@@ -85,6 +172,25 @@
       @include flexbox;
       margin-top: 0.444em;
 
+      // ==============
+      // === 반응형 ====
+        @include tablet-lg {
+          font-size: 0.94em;
+        }
+        @include mobile {
+          @include flex-direction(column);
+          margin-top: 22px;
+          font-size: 12px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        @include mobile-sm {
+          font-size: 11px;
+        }
+      // ==============
+
       &:first-child {
         margin-top: 0;
       }
@@ -93,10 +199,24 @@
     .info-title {
       font-weight: 800;
 
+      // ==============
+      // === 반응형 ====
+        @include mobile {
+          margin-bottom: 4px;
+        }
+      // ==============
+
       &:after {
         display: inline-block;
         padding: 0 5px;
         content: ':';
+
+        // ==============
+        // === 반응형 ====
+          @include mobile {
+            display: none;
+          }
+        // ==============
       }
     }
     .info-desc {
