@@ -33,11 +33,11 @@
   @include mobile {
     padding-top: 40px;
     padding-bottom: 250px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   @include mobile-sm {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   // ==============
@@ -58,10 +58,10 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          height: 61px;
+          height: 64px;
         }
         @include mobile {
-          height: 52px;
+          height: 62px;
         }
       // ==============
     }

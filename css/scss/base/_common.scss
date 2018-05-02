@@ -52,8 +52,15 @@ html, body {
 }
 
 
-[class^=bg-] {
+[class^=deco-],
+[class^=bg-],
+[class$=-image],
+[class$=-img] {
     user-select: none;
+    // touch-action: none;
+    // -ms-touch-action: none;
+    // pointer-events: none;
+    // -webkit-touch-callout: none;
 }
 
 .br-pc-md { //pc-md 이상에서만 보임

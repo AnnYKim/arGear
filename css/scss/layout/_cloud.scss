@@ -62,7 +62,7 @@
   .section-title {
 
     h2 {
-      height: 31px;
+      height: 32px;
       @include text-hidden;
       background-image: url(#{$path-image}title-cloud.svg);
       background-repeat: no-repeat;
@@ -70,16 +70,26 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          height: 28px;
+          height: 30px;
         }
         @include mobile {
-          height: 21px;
+          height: 28px;
         }
       // ==============
     }
     .title-small {
       margin-top: 1.1em;
-      font-size: 0.888em;
+      font-size: 16px;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          font-size: 14px;
+        }
+        @include mobile {
+          //font-size: 13px;
+        }
+      // ==============
     }
 
   } //end of .section-title
@@ -144,16 +154,21 @@
       margin-left: 56px;
       font-weight: 600;
       word-break: keep-all;
-      font-size: 0.833em;
+      font-size: 16px;
 
       // ==============
       // === 반응형 ====
         @include tablet-lg {
           width: 45%;
+          font-size: 15px;
         }
         @include tablet {
           width: 100%;
           margin-left: 0;
+          font-size: 14px;
+        }
+        @include mobile {
+          //font-size: 13px;
         }
       // ==============
 
@@ -181,14 +196,14 @@
               @include tablet-lg {
                 margin-top: -2px;
                 margin-right: 10px;
-                font-size: 13px;
+                font-size: 14px;
               }
               @include mobile {
-                margin-top: -1px;
-                width: 14px;
-                height: 14px;
-                line-height: 14px;
-                font-size: 11px;
+                margin-top: 0px;
+                width: 18px;
+                height: 18px;
+                line-height: 20px;
+                font-size: 13px;
               }
             // ==============
         }
