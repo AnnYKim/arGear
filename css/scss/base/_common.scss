@@ -55,3 +55,35 @@ html, body {
 [class^=bg-] {
     user-select: none;
 }
+
+.br-pc-md { //pc-md 이상에서만 보임
+    display: block;
+
+    @include pc-sm {
+        display: none;
+    }
+}
+
+.br-pc-sm { //pc-sm 이상에서만 보임
+    display: block;
+
+    @include tablet-lg {
+        display: none;
+    }
+}
+
+.br-ta-lg { //tablet-lg 이상에서만 보임
+    display: block;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.br-only-mo { //ONLY mobile 이하에서만 보임
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+}

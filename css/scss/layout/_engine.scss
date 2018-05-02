@@ -9,9 +9,7 @@
 
   & > .grid {
     position: relative;
-    //height: 380px; //relative라서 하단 남는 공간 생김
-    margin-bottom: -122px;
-    top: 0;
+    margin-bottom: -122px; //relative라서 하단 남는 공간 생김
     top: -13em;
     font-size: 18px; // [!] init.
 
@@ -62,7 +60,7 @@
         margin-top: 40px;
       }
       @include mobile {
-        
+        margin-top: 44px;
       }
     // ==============
     
