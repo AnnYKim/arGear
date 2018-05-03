@@ -4,6 +4,144 @@
 
 
 
+// [*] 스크롤 페이드인 효과
+
+$(function(){
+  $(window).on("load",function(){
+
+    window.sr = ScrollReveal();
+
+
+    sr.reveal('.fade-title-1',{
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-cont-1', {
+        delay: 700,
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }, 500
+    );
+
+    sr.reveal('.fade-title-2', {
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-cont-2', {
+        delay: 700,
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      },500
+    );
+
+    sr.reveal('.fade-cont-2-img', {
+        delay: 1060,
+        origin: 'right',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-title-3', {
+        // delay: 1300,
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-cont-3', {
+        distance: '40px',
+        delay: 610,
+        origin: 'bottom',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      },340
+    );
+
+    sr.reveal('.fade-title-4', {
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-cont-4', {
+        delay: 760,
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      },500
+    );
+
+    sr.reveal('.fade-title-5', {
+        origin: 'left',
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-cont-5', {
+        delay: 720,
+        opacity: 0,
+        scale: 1,
+        duration: 740,
+      }
+    );
+
+    sr.reveal('.fade-title-6', {
+      origin: 'left',
+      opacity: 0,
+      scale: 1,
+      duration: 740,
+    }
+  );
+
+  sr.reveal('.fade-cont-6', {
+      delay: 720,
+      opacity: 0,
+      scale: 1,
+      duration: 740,
+    }
+  );
+
+    sr.reveal('.fade-title-7',{
+      // delay: 960,
+      origin: 'left',
+      opacity: 0,
+      scale: 1,
+      duration: 740,
+    }
+  );
+
+  sr.reveal('.fade-cont-7', {
+      // delay: 1340,
+      delay: 720,
+      opacity: 0,
+      scale: 1,
+      duration: 700,
+    },500
+  );
+
+  });
+});
+
 
 // ==========================
 
@@ -31,6 +169,7 @@ function changePlaecholder(breakP1){
 // ==========================
 
 
+
 // [*] 반응형 분기점
 var breakPoint = [640, 768, 960, 1024];
 
@@ -46,8 +185,6 @@ function isSmallScreen(){
     }
   }
 }
-
-
 
 
 function preventScroll(){
@@ -97,15 +234,30 @@ $(function(){
     $navMenu.on('click',function(e){
       e.preventDefault();
 
+      console.log(sectionTop)
+
       $("body").hasClass("screen-small") ? headerHeight = 0 : headerHeight = 80;
 
       var idx = $navMenu.index($(this));
-      var position = (sectionTop[idx+1] - headerHeight);
+      
 
-      // Engine 섹션은 예외
-      if (idx === 2){
-        position -= 280;
-      }
+      switch (idx) { //Engine 섹션은 제외라서 switch문으로 작성
+        case 0:
+          var position = (sectionTop[idx+1] - headerHeight);
+            break;
+        case 1:
+          var position = (sectionTop[idx+1] - headerHeight);
+            break;
+        case 2:
+          var position = (sectionTop[idx+2] - headerHeight);
+            break;
+        case 3:
+          var position = (sectionTop[idx+2] - headerHeight);
+            break;
+        case 4:
+          var position = (sectionTop[idx+2] - headerHeight);
+            break;
+    }
 
       scroll(position);
 
@@ -152,6 +304,12 @@ $(function(){
     allowScroll();
   }
 
+   //로딩 이미지 제거
+   function removeLoading(){
+    $(".loading").fadeOut(1300);
+ }
+
+
 
   function initEvent(){
 
@@ -170,6 +328,8 @@ $(function(){
     //로고 클릭 시 맨 위로
     clickHeaderLogo();
 
+    //플레이스홀더 변경
+    changePlaecholder(640);
     
     //버거 토글
     $burger.on('click',function(e){
@@ -187,7 +347,17 @@ $(function(){
       isSmallScreen();
       getSectionTop();
       makeHeaderSticky();
+      changePlaecholder(390);
     });
+
+        
+    setTimeout(function(){
+        removeLoading();
+    },300);
+    setTimeout(function(){
+      $(".visual").addClass("on");
+    },500);
+
 
 
   }
@@ -203,16 +373,4 @@ $(function(){
 
 
 });
-
-
-
-
-
-$(window).on("load resize", function(){
-  changePlaecholder(640);
-});
-
-
-
-
 

@@ -50,6 +50,9 @@
     @include mobile {
       margin-bottom: 120px;
     }
+    @include mobile-sm {
+      margin-bottom: 170px;
+    }
     // ==============
     
 
@@ -101,6 +104,9 @@
       }
       @include mobile {
         max-width: 60%;
+      }
+      @include mobile-sm {
+        max-width: 100%;
       }
       // ==============
     }
@@ -171,7 +177,10 @@
       // ==============
       // === 반응형 ====
       @include tablet {
-        margin-top: 130px;
+        margin-top: 70px;
+      }
+      @include mobile {
+        margin-top: 30px;
       }
       // ==============
 

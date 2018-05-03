@@ -48,8 +48,18 @@ input {
     box-sizing: border-box;
     border-radius: 0; 
     -webkit-border-radius: 0px;
-    -webkit-apprearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background-color: transparent;
     border: 1px solid transparent;
 
+}
+
+//IOS adds it's styles by using an attribute selector input[type=text]
+input[type=text],
+input[type=email] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }

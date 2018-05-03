@@ -150,6 +150,9 @@
             @include mobile {
               width: 134px;
             }
+            @include mobile-sm {
+              width: 131px;
+            }
           // ==============
         }
       }
@@ -182,6 +185,9 @@
             }
             @include mobile {
               width: 147px;
+            }
+            @include mobile-sm {
+              width: 137px;
             }
           // ==============
         }

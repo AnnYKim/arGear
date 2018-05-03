@@ -41,6 +41,8 @@ $ta-width: 490px;
     height: 760px;
     margin-left: 34px;
     transform: translateX(-50%);
+    // transform: translateY(40px) translateX(-50%);
+    // transition: transform .7s;
     background-image: url(#{$path-image}deco-visual.png);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -79,6 +81,8 @@ $ta-width: 490px;
     left: 50%;
     bottom: 106px;
     transform: translateX(-50%);
+    // transform: translateY(40px) translateX(-50%);
+    // transition: transform .7s;
     box-sizing: border-box;
 
     // ==============
@@ -96,6 +100,10 @@ $ta-width: 490px;
         padding: 0 20px;
       }
     // ==============
+
+    .section-title {
+      overflow: visible;
+    }
   }
 
   .visual-logo {
@@ -373,18 +381,23 @@ $ta-width: 490px;
 }
 
 $time: 2.5s;
+$delay: .5s;
 
 .path_g {
   @include animation($time, visualTxt_up);
+  animation-delay: $delay;
 }
 .path_e {
   @include animation($time, visualTxt_down);
+  animation-delay: $delay;
 }
 .path_a_2 {
   @include animation($time, visualTxt_up);
+  animation-delay: $delay;
 }
 .path_r_2 {
   @include animation($time, visualTxt_down);
+  animation-delay: $delay;
 }
  
 .deco-mini-container {
@@ -403,6 +416,7 @@ $time: 2.5s;
     background-size: 90%; //블러 시 깨짐 현상 때문에
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    transition: all .2s;
   } 
 
   .square {
@@ -411,63 +425,110 @@ $time: 2.5s;
     background-size: 90%; //블러 시 깨짐 현상 때문에
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    transition: all .7s;
   }
   
   .deco-mini-1 { //우측 하단
-    bottom: -200px;
+    //bottom: -200px;
+    bottom: -400px;
     right: 0; 
     width: 560px;
     height: 560px;
     opacity: .33;
+    
   }
   
   .deco-mini-2 { //우측 중앙
-    top: 160px;
+    // top: 160px;
+    top: 280px;
     right: 600px;
     width: 250px;
     height: 250px;
     opacity: .6;
+
+    @include tablet-lg {
+      top: 60px;
+      right: 820px;
+      width: 230px;
+      height: 230px;
+    }
+    @include mobile {
+      width: 200px;
+      height: 200px;
+    }
   }
   
   .deco-mini-3 { //우측 최상단
-    top: 30px;
+    // top: 30px;
+    top: 120px;
     right: 270px;
     width: 150px;
     height: 150px;
   }
   
   .deco-mini-4 { //우측 상단 작은 원
-    top: 220px;
+    // top: 220px;
+    top: 300px;
     right: 186px;
     width: 70px;
     height: 70px;
   }
   
   .deco-mini-5 { //좌측 최상단 작은 원
-    top: 58px;
+    // top: 58px;
+    top: 128px;
     left: 426px;
     width: 70px;
     height: 70px;
   }
 
   .deco-mini-6 { //좌측 하단 큰 원
-    bottom: 158px;
+    // bottom: 158px;
+    bottom: 58px;
     left: 198px;
     width: 320px;
     height: 320px;
     opacity: 0.6;
+
+    @include tablet-lg {
+      left: 600px;
+      bottom: 200px;
+      width: 200px;
+      height: 200px;
+    }
+    @include mobile {
+      left: 800px;
+      bottom: 100px;
+      width: 160px;
+      height: 160px;
+    }
   }
 
   .deco-mini-7 { //우측 네모
-    top: 424px;
+    // top: 424px;
+    top: 494px;
     right: 412px;
     width: 62px;
     height: 62px;
     opacity: .33;
+
+    @include tablet-lg {
+      right: 760px;
+      top: initial !important;
+      //bottom: 220px;
+      bottom: 180px;
+      width: 56px;
+      height: 56px;
+    }
+    @include mobile {
+      bottom: 80px;
+      right: 860px;
+    }
   }
 
   .deco-mini-8 { //좌측 네모
-    top: 316px;
+    // top: 316px;
+    top: 366px;
     left: 176px;
     width: 54px;
     height: 54px;
@@ -476,6 +537,8 @@ $time: 2.5s;
    
    
 }
+
+
 
 .blur-7 { 
   filter: url(#blur7); 
@@ -492,3 +555,162 @@ html[data-agent*="Trident"] .square {
   background-image: url(#{$path-image}deco-visual-mini-2-blur.png); //IE에서는 SVG 필터 대신 이미지로 대체
 }
 
+
+
+
+.section.visual.on {
+  // .deco-visual {
+  //   transform: translateY(0px) translateX(-50%);
+  //   transition: transform .7s;
+  //   transition-delay: .5s;
+  // }
+  // .container {
+  //   transform: translateY(0px) translateX(-50%);
+  //   transition: transform .7s;
+  //   transition-delay: .9s;
+  // }
+
+  .circle, .square{
+    transition: all 1.4s .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+  
+
+  .deco-mini-5 { //좌측 최상단 작은 원
+    top: 58px;
+    transition-duration: 1.2s;
+    // transition-delay: .27s;
+    animation-name: visual_mini_move_m;
+    animation-duration: 7.5s; 
+    animation-delay: 2s;
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  .deco-mini-3 { //우측 최상단
+    top: 30px;
+    transition-duration: 0.9s;
+    // transition-delay: .43s;
+    animation-name: visual_mini_move_m;
+    animation-duration: 11s; 
+    animation-delay: 1.3s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+  
+
+
+  .deco-mini-4 { //우측 상단 작은 원
+    top: 220px;
+    transition-duration: 1.9s;
+    animation-name: visual_mini_move_l;
+    animation-duration: 8s; 
+    animation-delay: 2.2s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  
+  .deco-mini-2 { //우측 중앙
+    top: 160px;
+    transition-duration: 2s;
+    // transition-delay: .41s;
+    transition-duration: 1.9s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 13s; 
+    animation-delay: 2.7s;
+
+    @include tablet-lg {
+      top: -30px;
+    }
+  }
+
+
+  .deco-mini-7 { //우측 네모
+    top: 424px;
+    transition-duration: 2.6s;
+    animation-name: visual_mini_move_vl;
+    animation-duration: 5s; 
+    animation-delay: 2.8s;
+
+    @include tablet-lg {
+      bottom: 220px;
+    }
+    @include mobile {
+      bottom: 130px;
+    }
+  }
+
+  .deco-mini-8 { //좌측 네모
+    top: 316px;
+    transition-duration: 2.9s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 6s; 
+    animation-delay: 3.5s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+  
+
+
+  .deco-mini-1 { //우측 하단
+    bottom: -200px;
+    transition-duration: 4.2s;
+    // transition-delay: .37s;
+    animation-name: visual_mini_move_h;
+    animation-duration: 12s; 
+    animation-delay: 4.2s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  .deco-mini-6 { //좌측 하단 큰 원
+    bottom: 158px;
+    transition-duration: 4.4s;
+    // transition-delay: .26s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 8s; 
+    animation-delay: 4.6s;
+
+    @include tablet-lg {
+      bottom: 270px;
+    }
+    @include mobile {
+      bottom: 190px;
+    }
+  }
+  
+}
+
+
+// .loading {
+//   z-index: 500;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: #e6f5ff;
+//   @include flexbox;
+//   @include justify-content(center);
+//   @include align-items(center);
+// }
+// .loading > svg {
+//    display: block;
+//    width: 50%;
+//    position: relative;
+//    left: 2vw;
+// }

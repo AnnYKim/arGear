@@ -4,10 +4,10 @@
 *   HEADER STYLE
 */
 
-  // 변수 //
-  $header-pedding: 50px;
-  $header-height-ta: 70px;
-  ////////
+// 변수 //
+$header-pedding: 50px;
+$header-height-ta: 70px;
+////////
 
 .header {
   z-index: $zindex-important;
@@ -28,7 +28,7 @@
     z-index: 5hamburg0;
     position: fixed;
     top: -50px;
-    left: -50px;
+    right: -50px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -38,19 +38,52 @@
   }
 
   &.opened {
-      .header-container {
-        transform: translateX(0%);
+
+    .header-container {
+        pointer-events: initial !important;
+        user-select: initial !important;
         opacity: 1;
         transition: opacity .4s .25s;
-      }
-      .hamburger .burger-icon span {
-        background-color: #565d61;
-        transition: background-color .3s;
-      }
-        .nav-bg {
-            transform: scale(50);
-            transition: transform .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+
+    .nav-bg {
+        transform: scale(50);
+        transition: transform .9s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .gnb {
+        visibility: visible !important;
+        z-index: 100 !important;
+        pointer-events: initial !important;
+        user-select: initial !important;
+
+        &:after {
+            display: block;
         }
+    }
+
+    
+    .hamburger {
+        .burger-icon span {
+            background-color: #565d61;
+            transition: background-color .3s, transform .3s;
+
+            &:first-child {
+                transform: rotate(-45deg);
+                top: 2px;
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                top: 0;
+            }
+            &:nth-child(3) {
+                transform: translate(-12px);
+                opacity: 0;
+            }
+        }
+    }
+
   }
 
   @include tablet-lg {
@@ -105,9 +138,10 @@
       height: 80vh;
       margin-left: 0;
       padding: 0 20%;
-      transform: translateX(-100%);
       box-sizing: border-box;
       transition: opacity .4s .25s;
+      pointer-events: none;
+      user-select: none;
     }
     @include tablet {
         min-height: 0px;
@@ -120,37 +154,38 @@
   [class^=nav-] {
     cursor: pointer;
 
-    ::-moz-selection { 
-        background-color: transparent !important;
-    }
+    // ::-moz-selection { 
+    //     background-color: transparent !important;
+    // }
     
-    ::selection {
-        background-color: transparent !important;
-    }
+    // ::selection {
+    //     background-color: transparent !important;
+    // }
   }
 
   .nav-menu {
     text-transform: capitalize;
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.02rem;
     color: #444;
     transition: color .3s;
     cursor: pointer;
 
-    &:hover {
-      color: #2a6e8f;
-      transition: color .3s;
+    &:hover,
+    &:active {
+      color: #10a8c2;
     }
 
     @include tablet-lg {
-        font-size: 21px;
+        font-size: 26px;
     }
     @include tablet {
-        font-size: 19px;
+        // font-size: 22px;
+        font-size: 5vw;
     }
     @include mobile {
-        font-size: 18px;
+        // font-size: 20px;
     }
   }
 
@@ -171,18 +206,34 @@
 }//end of .header-bg
 
 .gnb {
+  position: relative;
   @include flexbox;
   @include align-items(center);
+
+
+  &:after {
+      display: none;
+      position: fixed;
+      bottom: 8vw;
+      color: #aaa;
+      font-size: 12px;
+      content: attr(data-footer);
+  }
 
   // === 반응형 ===
   @include tablet-lg {
     @include flex-direction(column);
     margin-top: 80px;
     margin-bottom: 80px;
+   
+    visibility: hidden;
+    z-index: -100;
+    pointer-events: none;
+    user-select: none;
   }
 
     @include mobile {
-        margin-top: 10vh;
+        margin-top: 12vw;
     }
 
     [class^=nav-] {
@@ -192,6 +243,7 @@
           display: block;
           width: 100%;
           height: 100%;
+          padding: 6px 0;
       }
 
       @include pc-sm {
@@ -199,12 +251,12 @@
       }
       @include tablet-lg {
           margin-left: 0;
-          margin-top: 36px;
-          width: 80%;
+          margin-top: 42px;
+          width: 100%;
           text-align: center;
       }
       @include mobile {
-          margin-top: 32px;
+          margin-top: 8vw;
       }
 
       &:first-child {
@@ -220,7 +272,7 @@
     display: none;
     position: absolute;
     top: 50%;
-    left: 25px;
+    right: 20px;
     width: 30px;
     height: 30px;
     margin-top: -15px;
@@ -238,7 +290,6 @@
 
     &:hover > .burger-icon span {
         background-color: #565d61;
-        transition: background-color .3s;
     }
 
     & > .burger-icon {
@@ -255,7 +306,8 @@
             transition: transform .2s;
             //background-color: #fff;
             background-color: #333;
-            transition: background-color .3s;
+            transition: background-color .3s, transform .3s;
+            // transition: all 18s;
 
             &:first-child {
                 top: -4px;
@@ -269,5 +321,26 @@
           }
         }
       }//end of .hamburger
+
+    //   .nav-line {
+    //     @include flexbox;
+    //     z-index: 5;
+    //     position: absolute;
+    //     top: 0;
+    //     width: 100%;
+    //     height: 100vh;
+
+    //     .line {
+    //         display: block;
+    //         width: 20%;
+    //         height: 100%;
+    //         border-left: 1px solid #ebebeb;
+    //         box-sizing: border-box;
+
+    //         &:last-child {
+    //             border-right: 1px solid #ebebeb;
+    //         }
+    //     }
+    //   }
 
 }//end of .header

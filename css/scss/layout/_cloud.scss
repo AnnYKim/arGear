@@ -106,11 +106,11 @@
        margin-top: 52px;
       }
       @include tablet {
-        margin-top: 46px;
+        margin-top: 48px;
         @include flex-wrap(wrap);
       }
       @include mobile {
-        margin-top: 38px;
+        // margin-top: 48px;
       }
     // ==============
 
@@ -133,14 +133,14 @@
         }
         @include tablet {
           width: 68%;
-          margin: 0 auto 50px;
+          margin: 0 auto 60px;
           height: auto;
           padding-top: 48%;
           background-size: contain;
         }
         @include mobile {
           width: 100%;
-          margin-bottom: 40px;
+          // margin-bottom: 40px;
           padding-top: 70%;
 
         }
