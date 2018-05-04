@@ -1,5 +1,9 @@
-// ui.js
-// 2018-05-03 03:16
+/*!
+ [ui.js]
+ nykim@nykim.net
+ nykim@nomadconnection.com
+ 2018-05-04 10:22
+*/
 
 
 

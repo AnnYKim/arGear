@@ -120,7 +120,7 @@ $header-height-ta: 70px;
   }
 
   .header-container {
-    overflow: auto;
+    // overflow: auto; [수정] 180504 IE에서 스크롤 생기는 문제로 제거
     display: block;
     margin-left: 98px;
 
