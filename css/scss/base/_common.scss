@@ -76,6 +76,14 @@ html, body {
     // -webkit-touch-callout: none;
 }
 
+.br-pc-lg {
+    display: block;
+
+    @include pc-md {
+        display: none;
+    }
+}
+
 .br-pc-md { //pc-md 이상에서만 보임
     display: block;
 
@@ -106,4 +114,9 @@ html, body {
     @include mobile {
         display: block;
     }
+}
+
+
+.visible-hidden {
+    visibility: hidden;
 }

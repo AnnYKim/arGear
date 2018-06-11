@@ -301,12 +301,16 @@
           <p class="title-small">시어스랩 로드맵</p>
         </div>
         <div class="roadmap-bg-container">
-          <span class="roadmap-bg"></span>
-          <span class="roadmap-bg"></span>
-          <span class="roadmap-bg"></span>
-          <span class="roadmap-bg"></span>
-          <span class="roadmap-bg"></span>
-          <span class="roadmap-bg"></span>
+          <div class="roadmap-bg-front">
+              <span class="roadmap-bg"></span>
+              <span class="roadmap-bg"></span>
+              <span class="roadmap-bg"></span>
+          </div>
+          <div class="roadmap-bg-back">
+            <span class="roadmap-bg"></span>
+            <span class="roadmap-bg"></span>
+            <span class="roadmap-bg"></span>
+          </div>
           <!-- <svg class="roadmap-bg" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <circle cx="60" cy="60" r="60"/>
           </svg>
@@ -335,9 +339,20 @@
               <span></span>
             </div>
           </div>
+          <div class="roadmap-timeline-container timeline-2">
+            <div class="roadmap-timeline-stroke"></div>
+            <div class="roadmap-timeline-circle">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
-        <ul class="roadmap-info">
-          <li class="roadmap-year">
+        <div class="roadmap-info">
+          <div class="roadmap-year-container">
+          <div class="roadmap-year">
             <div class="roadmap-title">2014-2015</div>
             <div class="roadmap-contents">
               <strong class="roadmap-contents-imp imp-foundationDate">2014.05 시어스랩 설립</strong>
@@ -366,8 +381,8 @@
                 <p class="roadmap-contents-description">출시 6개월만에 글로벌 오가닉 <br/>300만 다운로드 달성</p>
               </div>
             </div>
-          </li>
-          <li class="roadmap-year">
+          </div>
+          <div class="roadmap-year">
               <div class="roadmap-title">2016</div>
               <div class="roadmap-contents">
                 <div class="roadmap-contents-container">
@@ -387,8 +402,8 @@
                   <p class="roadmap-contents-description">롤리캠 글로벌 1,000만 <br/>다운로드 달성</p>
                 </div>
             </div>
-          </li>
-          <li class="roadmap-year">
+          </div>
+          <div class="roadmap-year">
               <div class="roadmap-title">2017</div>
               <div class="roadmap-contents">
                 <div class="roadmap-contents-container">
@@ -408,8 +423,10 @@
                   <p class="roadmap-contents-description">- 세계 최초 유료 AR 스티커 <br/>출시 (삼성전자향)<br/>- SK브로드밴드 옥수수 <br/>방송앱 탑재<br/>- ARGear 플랫폼 개발 시작</p>
                 </div>
             </div>
-          </li>
-          <li class="roadmap-year">
+          </div>
+          </div>
+          <div class="roadmap-year-container">
+          <div class="roadmap-year">
               <div class="roadmap-title">2018</div>
               <div class="roadmap-contents">
                 <div class="roadmap-contents-container">
@@ -429,8 +446,8 @@
                   <p class="roadmap-contents-description">- 가상 피팅(Virtual-try on) <br/>기능 추가<br/>- Basement / Channel 알파 <br/>개발 완료 및 오픈<br/>- AR 파트너 컨소시엄 구성 및 확대</p>
                 </div>
             </div>
-          </li>
-          <li class="roadmap-year">
+          </div>
+          <div class="roadmap-year">
               <div class="roadmap-title">2019-2020</div>
               <div class="roadmap-contents">
                 <div class="roadmap-contents-container">
@@ -439,15 +456,16 @@
                 </div>
                 <div class="roadmap-contents-container">
                   <strong class="roadmap-contents-title">2019. 2Q</strong>
-                  <p class="roadmap-contents-description">- ARGear World 메인넷 출시<br/>- Basement / Channel Version <br/>1.0 개발 완료 및 오픈<br/>- Application Module <br/>베타 개발 완료 및 오픈<br/>- 내부 거래소 개발 완료 및 출시</p>
+                  <p class="roadmap-contents-description">- ARGear World 메인넷 출시<br/>- Basement / Channel Version <br class="br-pc-lg"/>1.0 개발 완료 및 오픈<br/>- Application Module <br/>베타 개발 완료 및 오픈<br/>- 내부 거래소 개발 완료 및 출시</p>
                 </div>
                 <div class="roadmap-contents-container">
                   <strong class="roadmap-contents-title">2019. 3Q</strong>
                   <p class="roadmap-contents-description">- ARGear World Application <br/>개발자 포럼 출범<br/>- AR 기기 제조사 파트너사 <br/>네트워크 구축<br/>- ARGear Studio Authoring <br/>Tool 론치</p>
                 </div>
             </div>
-          </li>
-          <li class="roadmap-year">
+          </div>
+          <div class="roadmap-year">
+              <div class="roadmap-title visible-hidden">2019-2020</div>
               <div class="roadmap-contents">
                 <div class="roadmap-contents-container">
                   <strong class="roadmap-contents-title">2019. 4Q</strong>
@@ -459,8 +477,9 @@
                 </div>
                 <strong class="roadmap-contents-imp imp-poDone">2020.2Q<br/>ARGear Coin 상장 완료</strong>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
+        </div>
       </div>
     </section>
 
@@ -519,7 +538,17 @@
           <h2>Token Sale</h2>
           <p class="title-small">토큰 세일</p>
         </div>
-        토큰세일 컨텐츠가 여기 들어갑니다.
+        <div class="tokenSale-info">
+          <div class="tokenSale-image text-hidden">
+            <strong>Token Allocation</strong>
+            <p>Foundation: 5%</p>
+            <p>Community Group and Strategy Partners: 15%</p>
+            <p>Reserve: 15%</p>
+            <p>Team, Advisors and Early Contributors: 15%</p>
+            <p>Token Sale: 50% (Reserve: 10%, Operation Expense: 10%, Marketing Expense: 15%, Strategic Partners &amp; Investors: 15%)</p>
+          </div>
+          <div class="tokenSale-image-2"></div>
+        </div>
       </div>
     </section>
 

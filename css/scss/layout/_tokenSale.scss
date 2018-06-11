@@ -5,17 +5,16 @@
 */
 
 
-.section.member {
+.section.tokenSale {
   position: relative;
   overflow-x: hidden;
-  background-color: #f7f7f7;
+  background-color: #10a8c2;
 
   & > .grid {
     max-width: 1240px;
-    padding-top: 70px;
-    padding-bottom: 230px;
+    padding-top: 140px;
+    padding-bottom: 120px;
     font-size: 16px;
-    @include flexbox;
 
     // ==============
     // === 반응형 ====
@@ -38,10 +37,10 @@
     margin-bottom: 30px;
 
     h2 {
-      width: 160px;
-      height: 38px;
+      width: 213px;
+      height: 34px;
       @include text-hidden;
-      background-image: url(#{$path-image}title-member.svg);
+      background-image: url(#{$path-image}title-tokenSale.svg);
       background-repeat: no-repeat;
 
       // ==============
@@ -74,80 +73,30 @@
 
   } //end of .section-title
 
+  .tokenSale-info {
+    position: relative;
+    width: 976px;
+    margin: 0 auto;
+  }
 
-  .container {
-    @include flex-basis(50%);
-
-  } //end of .container
-
-  .member-info-list {
-    display: inline-block;
-    font-weight: 600;
-    width: 202px;
-    padding-left: 12px;
-    margin-bottom: 3.7em;
-    border-left: 2px solid #32c0d8;
-    box-sizing: border-box;
-
-    dl {
-      margin-top: 0.6em;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    .member-info-title {
-      display: inline-block;
-      color: #45568c;
-
-      &:after {
-        content: '.';
-      }
-    }
-    .member-info-text {
-      display: inline-block;
-      color: #7f7f7f;
-    }
-
-
-
-    &.info-advisor {
-      display: block;
-      margin-bottom: 0;
-
-      .member-info-title {
-
-        &:after {
-          display: none;
-        }
-      }
-      .member-info-text {
-        display: block;
-        margin-top: 0.6em;
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-    }
-  } //.member-info-list
-
-  
-
-  .bg-member { 
-    @include flex-basis(52%);
-    background-image: url(#{$path-image}deco-member.png);
-    background-size: 480px 304px;
-    background-position: 0% 20px;
+  .tokenSale-image {
+    width: 545px;
+    height: 423px;
+    overflow: hidden;
+    background-image: url(#{$path-image}img-tokenSale-1.png);
+    background-size: 100%;
+    text-indent: -9999px;
     background-repeat: no-repeat;
-
-    // ==============
-    // === 반응형 ====
-      @include tablet {
-        display: none;
-      }
-    // ==============
+  }
+  .tokenSale-image-2 {
+    position: absolute;
+    top: 135px;
+    right: 0;
+    width: 500px;
+    height: 91px;
+    background-image: url(#{$path-image}img-tokenSale-2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
 }
