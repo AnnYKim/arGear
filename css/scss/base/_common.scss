@@ -108,15 +108,21 @@ html, body {
     }
 }
 
+.br-ta { //tablet 이상에서만 보임
+    display: block;
+
+    @include mobile-lg {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+
 .br-only-mo { //ONLY mobile 이하에서만 보임
     display: none;
 
     @include mobile {
         display: block;
     }
-}
-
-
-.visible-hidden {
-    visibility: hidden;
 }

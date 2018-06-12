@@ -95,6 +95,10 @@
     .roadmap-bg-front,
     .roadmap-bg-back {
       @include flexbox;
+
+      @include mobile-lg {
+        display: none;
+      }
     }
 
     .roadmap-bg-front {
@@ -113,7 +117,6 @@
         margin-left: 0;
         position: absolute;
         top: 740px;
-        // outline: 4px solid darkgreen;
       }
       @include tablet-lg {
         top: 654px;
@@ -166,6 +169,9 @@
       @include tablet {
         width: 536px;
       }
+      @include mobile-lg {
+        display: none;
+      }
 
       &:before,
       &:after {
@@ -205,6 +211,9 @@
       }
       @include tablet {
         width: 536px;
+      }
+      @include mobile-lg {
+        display: none;
       }
 
       span {
@@ -262,6 +271,9 @@
     @include tablet-lg {
       top: 762px;
     }
+    @include mobile-lg {
+      display: none;
+    }
   }
 
   .roadmap-info {
@@ -280,7 +292,9 @@
     @include tablet {
     }
 
-    @include mobile {
+    @include mobile-lg {
+      @include justify-content(flex-end);
+      padding-top: 100px;
     }
     // ==============
 
@@ -291,6 +305,74 @@
     position: relative;
     @include flexbox;
     @include flex-basis(50%);
+
+
+    @include mobile-lg {
+      display: block;
+      padding-left: 0; 
+      @include flex-basis(auto);
+
+      .roadmap-year { 
+        padding-top: 60px;
+        
+
+        &.noPadding {
+          @include mobile-lg {
+            padding-top: 0;
+
+            &:before {
+              margin-top: 30px;
+            }
+          }
+        }
+
+        &.year-last {
+          @include mobile-lg {
+            margin-top: -20px;
+            padding-top: 24px;
+
+            &:before {
+              //outline: 4px solid gold;
+              // top: 0;
+              height: 65%;
+              margin-top: -50px;
+            }
+          }
+        }
+
+        &:before { //작은 원 반복
+          display: block;
+          overflow: hidden;
+          z-index: 2;
+          position: absolute;
+          top: 50%;
+          left: 13px;
+          width: 12px;
+          height: 64%;
+          transform: translateY(-50%);
+          margin-top: 60px;
+          margin-left: -0.03rem;
+          background-image: url(#{$path-image}deco-timeline-mo.png); 
+          background-position: 0 0%;
+          background-size: 100%;
+          background-repeat: repeat-y;
+          // background-repeat: no-repeat;
+          content: '';
+        }
+
+        &:after {
+          display: block;
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          left: 18px;
+          width: 2px;
+          height: 100%;
+          background-color: #000;
+          content: '';
+        }
+      }
+    }
 
     &.year-container-1 {
       .roadmap-year:nth-child(3) {
@@ -307,10 +389,9 @@
         }
       }
       @include mobile-lg {
-        display: block;
-        padding-left: 0; 
-        outline: 4px solid orange;
+        padding-left: 0;
       }
+      
     }
 
     &.year-container-2 {
@@ -333,6 +414,10 @@
         .roadmap-year:nth-child(3){
           left: 0;
         }
+      }
+      @include mobile-lg {
+        margin-top: 0;
+        padding-left: 0;
       }
     }
 
@@ -381,6 +466,69 @@
 
       @include tablet-lg {
         font-size: 13px;
+        margin-left: -4px;
+      }
+
+      @include mobile-lg {
+        z-index: 2;
+        position: relative;
+        font-size: 15px;
+        margin-left: 0;
+        padding-left: 30%;
+        margin-bottom: 12px;
+
+        &:before { //mini circle
+          z-index: 3;
+          position: absolute;
+          top: 0px; 
+          left: 11px;
+          display: block;
+          position: absolute;
+          display: block;
+          width: 10px;
+          height: 10px;
+          background-color: #074d77;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          content: '';
+        }
+
+
+        &:after { //skyblue background circle
+         
+          // display: block;
+          // position: absolute;
+          // top: 60px;
+          // left: 0%;
+          // margin-top: -63px;
+          // margin-left: -60px;
+          // width: 150px;
+          // height: 150px;
+          // background-color: #ddf3ff;
+          // pointer-events: none;
+          // border-radius: 50%;
+          // content: '';
+
+
+          display: block;
+          z-index: 2;
+          position: absolute;
+          top: -54px;
+          left: 10px;
+          width: 20px;
+          height: 134px;
+          //content: '';
+          background-color: #ddf3ff;
+
+        }
+      }
+
+      &.visible-hidden {
+         visibility: hidden;
+
+         @include mobile-lg {
+           display: none;
+         }
       }
     }
 
@@ -396,10 +544,19 @@
 
       @include tablet-lg {
         font-size: 13px;
+        padding-left: 18px;
       }
+
+      @include mobile-lg {
+        position: relative;
+        font-size: 15px;
+        padding-left: 0;
+      }
+
 
       &.imp-foundationDate {
         margin-bottom: 34px;
+
       }
       &.imp-poDone {
       }
@@ -409,6 +566,35 @@
       z-index: 1;
       position: relative;
       left: -22px;
+      
+      @include mobile-lg {
+        left: 0;
+        padding-left: 30%;
+
+        &:before {//skyblue background circle
+         
+          display: block;
+          position: absolute;
+          top: 60px;
+          left: 0%;
+          margin-top: -156px;
+          margin-left: -50px;
+          width: 150px;
+          height: 150px;
+          background-color: #ddf3ff;
+          pointer-events: none;
+          border-radius: 50%;
+          content: '';
+
+        }
+
+
+        &.contents-last:before {
+          outline: 3px solid pink;
+          top: initial;
+          bottom: -74px;
+        }
+      }
 
       .roadmap-contents-container {
         margin-top: -12px;
@@ -429,9 +615,14 @@
           padding: 10px;
         }
         @include mobile-lg {
-          margin-top: 0;
+          margin-top: 18px;
           padding: 0;
-          font-size: 15px;
+          font-size: 14px;
+          transform: scale(1);
+          letter-spacing: 0;
+        }
+        @include mobile {
+          //font-size: 14px;
         }
         
         .roadmap-contents-title {
@@ -439,11 +630,21 @@
           display: block;
           margin-bottom: 4px;
           color: #45568c;
+          font-weight: 600;
+
+          @include mobile-lg {
+            margin-bottom: 2px;
+          }
         }
         .roadmap-contents-description {
           position: relative;
           color: #ababab;
           line-height: 170%;
+
+          @include mobile-lg {
+            color: #727272;
+            line-height: 160%;
+          }
         }
 
         &:hover {
@@ -456,16 +657,29 @@
           @include tablet {
             transform: scale(0.96);
           }
+          @include mobile-lg {
+            transform: scale(1);
+            padding: 0;
+            background: none;
+          }
 
           .roadmap-contents-title {
             color: #4a9bec;
             font-weight: 600;
+
+            @include mobile-lg {
+              color: #45568c;
+            }
           }
 
           .roadmap-contents-description {
             color: #000;
-            font-weight: normal;
             font-weight: 600;
+
+            @include mobile-lg {
+              color: #727272;
+              font-weight: 400;
+            }
           }
         }
 
