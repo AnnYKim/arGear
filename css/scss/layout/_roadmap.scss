@@ -292,7 +292,7 @@
     @include flexbox;
     @include flex-basis(50%);
 
-    &:first-child {
+    &.year-container-1 {
       .roadmap-year:nth-child(3) {
         left: -8px;
       }
@@ -306,9 +306,14 @@
           left: 0;
         }
       }
+      @include mobile-lg {
+        display: block;
+        padding-left: 0; 
+        outline: 4px solid orange;
+      }
     }
 
-    &:last-child {
+    &.year-container-2 {
       left: -4px;
       .roadmap-year:nth-child(2){
         left: 24px;
@@ -422,6 +427,11 @@
         @include tablet-lg {
           font-size: 13px;
           padding: 10px;
+        }
+        @include mobile-lg {
+          margin-top: 0;
+          padding: 0;
+          font-size: 15px;
         }
         
         .roadmap-contents-title {
