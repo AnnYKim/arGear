@@ -125,7 +125,7 @@ $(function(){
     }
   );
 
-    sr.reveal('.fade-title-7',{
+  sr.reveal('.fade-title-7',{
       // delay: 960,
       origin: 'left',
       opacity: 0,
@@ -141,6 +141,75 @@ $(function(){
       scale: 1,
       duration: 700,
     },500
+  );
+
+
+  sr.reveal('.fade-title-8',{
+      origin: 'left',
+      opacity: 0,
+      scale: 1,
+      duration: 740,
+    },1000
+  );
+
+  // sr.reveal('.fade-cont-8', {
+  //     delay: 500,
+  //     opacity: 0,
+  //     scale: 1,
+  //     duration: 600,
+  //   },500
+  // );
+
+
+  sr.reveal('.fade-title-9',{
+    origin: 'left',
+    opacity: 0,
+    scale: 1,
+    duration: 740,
+    }
+  );
+
+  sr.reveal('.fade-cont-9', {
+      delay: 780,
+      origin: 'left',
+      opacity: 0,
+      scale: 1,
+      duration: 700,
+    }
+  );
+  sr.reveal('.fade-cont-9-img', {
+      delay: 780,
+      origin: 'right',
+      opacity: 0,
+      scale: 1,
+      duration: 740,
+    }
+  );
+
+  sr.reveal('.fade-title-10',{
+    origin: 'left',
+    opacity: 0,
+    scale: 1,
+    duration: 740,
+    }
+  );
+
+  sr.reveal('.fade-cont-10', {
+    origin: 'left',
+      delay: 720,
+      opacity: 0,
+      scale: 1,
+      duration: 700,
+    },540
+  );
+
+  sr.reveal('.fade-cont-10-img', {
+      delay: 720,
+      origin: 'right',
+      opacity: 0,
+      scale: 1,
+      duration: 700,
+    },540
   );
 
   });
@@ -210,7 +279,6 @@ $(function(){
 
   var sectionTop = []; //각 section의 위치
   var headerHeight = 80; //header의 높이 (PC = 80, mobile = 70)
-  var headerMenuLength = 3; //클릭 시 이동하는 메뉴의 개수
 
   var $body = $("html, body");
   var $header = $(".header");
@@ -241,7 +309,6 @@ $(function(){
       $("body").hasClass("screen-small") ? headerHeight = 0 : headerHeight = 80;
 
       var idx = $navMenu.index($(this));
-      
 
       switch (idx) { //Engine 섹션은 제외라서 switch문으로 작성
         case 0:
@@ -259,6 +326,12 @@ $(function(){
         case 4:
           var position = (sectionTop[idx+2] - headerHeight);
             break;
+        case 5:
+          var position = (sectionTop[idx+2] - headerHeight);
+            break;
+        case 6:
+        var position = (sectionTop[idx+3] - headerHeight);
+          break;
     }
 
       scroll(position);

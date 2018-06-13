@@ -20,19 +20,23 @@
     // === 반응형 ====
     @include pc-md {
       //background-color: seagreen;
-    padding-top: 110px;
-    padding-bottom: 80px;
+      padding-top: 110px;
+      padding-bottom: 80px;
     }
     @include tablet-lg {
-      font-size: 16px;
+      padding-bottom: 70px;
     }
 
     @include tablet {
-      font-size: 15px;
+      padding-top: 80px;
     }
 
+    @include mobile-lg {
+      overflow: hidden;
+      padding-top: 60px;
+    }
     @include mobile {
-      font-size: 12px;
+      padding-top: 40px;
     }
     // ==============
   }
@@ -55,12 +59,8 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          width: 103px;
-          height: 30px;
-        }
-        @include mobile {
-          width: 96px;
-          height: 28px;
+          width: 160px;
+          height: 36px;
         }
       // ==============
     }
@@ -294,7 +294,7 @@
 
     @include mobile-lg {
       @include justify-content(flex-end);
-      padding-top: 100px;
+      padding-top: 70px;
     }
     // ==============
 
@@ -326,6 +326,14 @@
           }
         }
 
+        &.year-last-before {
+          @include mobile-lg {
+            &:before {
+              height: 66%;
+            }
+          }
+        }
+
         &.year-last {
           @include mobile-lg {
             margin-top: -20px;
@@ -335,7 +343,7 @@
               //outline: 4px solid gold;
               // top: 0;
               height: 65%;
-              margin-top: -50px;
+              margin-top: -30px;
             }
           }
         }
@@ -418,6 +426,20 @@
       @include mobile-lg {
         margin-top: 0;
         padding-left: 0;
+          &:after {
+            //mini circle
+            z-index: 3;
+            position: absolute;
+            bottom: 0px; 
+            left: 11px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #074d77;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            content: '';
+        }
       }
     }
 
@@ -445,7 +467,6 @@
     @include flex-basis(210px);
     flex-shrink: 0;
     font-size: 13px;
-    // outline: 4px solid red;
 
     @include tablet {
       @include flex-basis(190px);
@@ -495,20 +516,6 @@
 
 
         &:after { //skyblue background circle
-         
-          // display: block;
-          // position: absolute;
-          // top: 60px;
-          // left: 0%;
-          // margin-top: -63px;
-          // margin-left: -60px;
-          // width: 150px;
-          // height: 150px;
-          // background-color: #ddf3ff;
-          // pointer-events: none;
-          // border-radius: 50%;
-          // content: '';
-
 
           display: block;
           z-index: 2;
@@ -559,6 +566,10 @@
 
       }
       &.imp-poDone {
+        @include mobile-lg {
+          margin-top: 20px;
+          margin-bottom: 4px;
+        }
       }
     }
 
@@ -590,8 +601,7 @@
 
 
         &.contents-last:before {
-          outline: 3px solid pink;
-          top: initial;
+          top: auto !important;
           bottom: -74px;
         }
       }

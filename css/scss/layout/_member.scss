@@ -11,27 +11,33 @@
   background-color: #f7f7f7;
 
   & > .grid {
+    position: relative;
     max-width: 1240px;
     padding-top: 70px;
-    padding-bottom: 230px;
+    margin-bottom: 230px;
     font-size: 16px;
     @include flexbox;
 
     // ==============
     // === 반응형 ====
+    @include pc-md {
+      max-width: 960px;
+    }
     @include tablet-lg {
-      font-size: 16px;
+      font-size: 15px;
+      padding-top: 50px;
+      margin-bottom: 170px;
     }
 
     @include tablet {
-      font-size: 15px;
+      margin-bottom: 220px;
     }
 
-    @include mobile {
-      font-size: 12px;
+    @include mobile-lg {
+      padding-top: 70px;
     }
     // ==============
-  }
+  
 
 
   .section-title {
@@ -47,12 +53,10 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          width: 103px;
-          height: 30px;
+          width: 160px;
+          height: 33px;
         }
         @include mobile {
-          width: 96px;
-          height: 28px;
         }
       // ==============
     }
@@ -65,9 +69,8 @@
       // === 반응형 ====
         @include tablet {
           font-size: 14px;
-        }
-        @include mobile {
-          //font-size: 13px;
+          margin-bottom: 50px;
+          margin-top: 15px;
         }
       // ==============
     }
@@ -78,16 +81,29 @@
   .container {
     @include flex-basis(50%);
 
+    @include tablet-lg {
+      @include flex-basis(100%);
+    }
+
   } //end of .container
 
   .member-info-list {
     display: inline-block;
     font-weight: 600;
+    font-size: 1em;
     width: 202px;
     padding-left: 12px;
     margin-bottom: 3.7em;
     border-left: 2px solid #32c0d8;
     box-sizing: border-box;
+
+    @include tablet-lg {
+      width: 182px;
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      width: 164px;
+    }
 
     dl {
       margin-top: 0.6em;
@@ -144,10 +160,38 @@
 
     // ==============
     // === 반응형 ====
+      @include pc-sm {
+        background-size: 100% auto;
+        background-position: 50% 50%;
+      }
+      @include tablet-lg {
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        width: 400px;
+        height: 253px;
+      }
       @include tablet {
-        display: none;
+        bottom: -120px;
+      }
+      @include mobile-lg {
+        width: 360px;
+        height: 228px;
+        bottom: -140px;
+      }
+      @include mobile {
+        width: 290px;
+        height: 184px;
+        bottom: -160px;
+      }
+      @include mobile-sm {
+        width: 270px;
+        height: 171px;
+        bottom: -180px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     // ==============
   }
-
+  }
 }

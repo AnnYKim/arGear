@@ -18,16 +18,22 @@
 
     // ==============
     // === 반응형 ====
-    @include tablet-lg {
-      font-size: 16px;
+    @include pc-md {
+      max-width: 960px;
     }
 
     @include tablet {
-      font-size: 15px;
+      padding-top: 80px;
+      padding-bottom: 90px;
     }
 
+    @include mobile-lg {
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
     @include mobile {
-      font-size: 12px;
+      padding-top: 40px;
+      padding-bottom: 45px;
     }
     // ==============
   }
@@ -46,11 +52,7 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          width: 103px;
-          height: 30px;
-        }
-        @include mobile {
-          width: 96px;
+          width: 180px;
           height: 28px;
         }
       // ==============
@@ -64,9 +66,7 @@
       // === 반응형 ====
         @include tablet {
           font-size: 14px;
-        }
-        @include mobile {
-          //font-size: 13px;
+          margin-top: 15px;
         }
       // ==============
     }
@@ -77,6 +77,10 @@
     position: relative;
     width: 976px;
     margin: 0 auto;
+
+    @include pc-md {
+      width: 100%;
+    }
   }
 
   .tokenSale-image {
@@ -87,6 +91,28 @@
     background-size: 100%;
     text-indent: -9999px;
     background-repeat: no-repeat;
+
+    @include pc-sm {
+      width: 480px;
+      height: 373px;
+    }
+    @include tablet-lg {
+      width: 510px;
+      height: 396px;
+      margin: 0 auto;
+      margin-bottom: 60px;
+    }
+    @include mobile-lg {
+      width: 80%;
+      height: 0;
+      margin-bottom: 40px;
+      padding-top: 62%;
+      background-size: contain;
+    }
+    @include mobile {
+      width: 100%;
+      padding-top: 78%;
+    }
   }
   .tokenSale-image-2 {
     position: absolute;
@@ -97,6 +123,31 @@
     background-image: url(#{$path-image}img-tokenSale-2.png);
     background-size: 100%;
     background-repeat: no-repeat;
+
+    @include pc-sm {
+      top: 120px;
+      right: 14px;
+      width: 480px;
+      height: 87px;
+    }
+    @include tablet-lg {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 500px;
+      height: 91px;
+      margin: 0 auto;
+    }
+    @include mobile-lg {
+      width: 80%;
+      height: 0;
+      padding-top: 15%;
+      background-size: contain;
+    }
+    @include mobile {
+      width: 100%;
+      padding-top: 19%;
+    }
   }
 
 }
