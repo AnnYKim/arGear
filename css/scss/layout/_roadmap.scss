@@ -50,7 +50,7 @@
     }
 
     h2 {
-      width: 182px;
+      width: 172px;
       height: 40px;
       @include text-hidden;
       background-image: url(#{$path-image}title-roadmap.svg);
@@ -59,7 +59,7 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          width: 160px;
+          width: 154px;
           height: 36px;
         }
       // ==============

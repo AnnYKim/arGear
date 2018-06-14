@@ -43,7 +43,7 @@
     margin-bottom: 30px;
 
     h2 {
-      width: 213px;
+      width: 210px;
       height: 34px;
       @include text-hidden;
       background-image: url(#{$path-image}title-tokenSale.svg);
@@ -52,7 +52,7 @@
       // ==============
       // === 반응형 ====
         @include tablet {
-          width: 180px;
+          width: 173px;
           height: 28px;
         }
       // ==============

@@ -63,15 +63,18 @@
       @include text-hidden;
       background-image: url(#{$path-image}title-dpo.svg);
       background-repeat: no-repeat;
+      background-position: 0% 0;
 
       // ==============
       // === 반응형 ====
         @include tablet {
           height: 118px;
           margin-bottom: 60px;
+          width: 165px;
         }
         @include mobile {
-          height: 114px;
+          width: 144px;
+          height: 103px;
           margin-bottom: 50px;
         }
       // ==============

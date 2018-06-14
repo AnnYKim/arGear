@@ -295,10 +295,16 @@ $(function(){
   }
 
   // [*] 스크롤 함수
-  function scroll(where){ 
-    $body.stop().animate({
-      scrollTop: where
-    },800);
+  function scroll(where, anim){ 
+    if(anim==null){
+
+      $body.stop().animate({
+        scrollTop: where
+      },800);
+      
+    }else{
+      $body.scrollTop(0);
+    }
   }
 
   // [*] 헤더 링크 클릭 시 해당 섹션으로 이동
@@ -330,7 +336,10 @@ $(function(){
           var position = (sectionTop[idx+2] - headerHeight);
             break;
         case 6:
-        var position = (sectionTop[idx+3] - headerHeight);
+        var position = (sectionTop[idx+2] - headerHeight);
+          break;
+        case 7:
+        var position = (sectionTop[idx+2] - headerHeight);
           break;
     }
 
@@ -427,6 +436,7 @@ $(function(){
 
         
     setTimeout(function(){
+        scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
         removeLoading();
     },300);
     setTimeout(function(){
