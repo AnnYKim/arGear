@@ -10,8 +10,8 @@
   @include align-items(center);
   position: relative;
   height: 116px;
-  background-color: #21bbd5;
-  border-top: 1px solid #7ad6e6;
+  background-color: #efefef;
+  border-top: 1px solid #d9e2e4;
 
   // ==============
   // === 반응형 ====
@@ -24,7 +24,7 @@
   // ==============
 
   .copyright {
-    color: #074d77;
+    color: #777;
     font-size: 14px;
     font-weight: 600;
     text-align: center;
