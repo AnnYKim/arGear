@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Cloud
+*/
+
+.section.cloud {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #d9eefb;
+
+  .bg-cloud { //grid 영역 밖에 있음
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1040px;
+    height: 100%;
+    margin-left: -530px;
+    background-image: url(#{$path-image}deco-cloud.png);
+    background-size: 336px 262px;
+    background-position: 100% 100px;
+    background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet {
+        display: none;
+      }
+    // ==============
+  }
+
+  & > .grid {
+    z-index: 1;
+    position: relative;
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    padding-top: 80px;
+    padding-bottom: 85px;
+    font-size: 18px; // [!] init.
+
+    // ==============
+    // === 반응형 ====
+    @include tablet-lg {
+      padding-top: 60px;
+      padding-bottom: 65px;
+      font-size: 16px;
+    }
+
+    @include tablet {
+      padding-top: 40px;
+      padding-bottom: 45px;
+      font-size: 15px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+    // ==============
+  }
+
+  .section-title {
+
+    h2 {
+      width: 110px;
+      height: 32px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-cloud.svg);
+      background-repeat: no-repeat;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          width: 103px;
+          height: 30px;
+        }
+        @include mobile {
+          width: 96px;
+          height: 28px;
+        }
+      // ==============
+    }
+    .title-small {
+      margin-top: 1.1em;
+      font-size: 16px;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          font-size: 14px;
+        }
+        @include mobile {
+          //font-size: 13px;
+        }
+      // ==============
+    }
+
+  } //end of .section-title
+
+  .container {
+    @include flexbox;
+    margin-top: 3.7em;
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+       margin-top: 52px;
+      }
+      @include tablet {
+        margin-top: 48px;
+        @include flex-wrap(wrap);
+      }
+      @include mobile {
+        // margin-top: 48px;
+      }
+    // ==============
+
+    .cloud-image {
+      width: 441px;
+      height: 320px;
+      background-image: url(#{$path-image}img-cloud.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      // ==============
+      // === 반응형 ====
+        @include pc-sm {
+          width: 400px;
+          height: 280px;
+        }
+        @include tablet-lg {
+          width: 376px;
+          height: 263px;
+        }
+        @include tablet {
+          width: 68%;
+          margin: 0 auto 60px;
+          height: auto;
+          padding-top: 48%;
+          background-size: contain;
+        }
+        @include mobile {
+          width: 100%;
+          // margin-bottom: 40px;
+          padding-top: 70%;
+
+        }
+      // ==============
+  
+    } //end of .cloud-image
+  
+    .cloud-info {
+      z-index: 1;
+      position: relative;
+      @include flexbox;
+      @include flex-direction(column);
+      @include justify-content(center);
+      margin-left: 56px;
+      font-weight: 600;
+      word-break: keep-all;
+      font-size: 16px;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet-lg {
+          width: 45%;
+          font-size: 15px;
+        }
+        @include tablet {
+          width: 100%;
+          margin-left: 0;
+          font-size: 14px;
+        }
+        @include mobile {
+          //font-size: 13px;
+        }
+      // ==============
+
+      li {
+        @include flexbox;
+        margin-top: 1.056em;
+
+          &:before {
+            @include flex-shrink(0);
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: -1px;
+            margin-right: 13px;
+            color: #074d77;
+            background-color: #cee2ed;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 21px;
+
+            // ==============
+            // === 반응형 ====
+              @include tablet-lg {
+                margin-top: -2px;
+                margin-right: 10px;
+                font-size: 14px;
+              }
+              @include mobile {
+                margin-top: 0px;
+                width: 18px;
+                height: 18px;
+                line-height: 20px;
+                font-size: 13px;
+              }
+            // ==============
+        }
+  
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}){
+            &:before {
+              content: '#{$i}';
+            }
+          }
+        }
+      }
+    } //end of .cloud-info
+
+  } //end of .container
+
+} //end of .section.cloud

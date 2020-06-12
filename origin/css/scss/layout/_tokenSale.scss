@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - tokenSale
+*/
+
+
+.section.tokenSale {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #10a8c2;
+
+  & > .grid {
+    max-width: 1240px;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    font-size: 16px;
+
+    // ==============
+    // === 반응형 ====
+    @include pc-md {
+      max-width: 960px;
+    }
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 90px;
+    }
+
+    @include mobile-lg {
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
+    @include mobile {
+      padding-top: 40px;
+      padding-bottom: 45px;
+    }
+    // ==============
+  }
+
+
+  .section-title {
+    margin-bottom: 30px;
+
+    h2 {
+      width: 210px;
+      height: 34px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-tokenSale.svg);
+      background-repeat: no-repeat;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          width: 173px;
+          height: 28px;
+        }
+      // ==============
+    }
+    .title-small {
+      margin-top: 1.2em;
+      margin-bottom: 4.62em;
+      font-size: 16px;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          font-size: 14px;
+          margin-top: 15px;
+        }
+      // ==============
+    }
+
+  } //end of .section-title
+
+  .tokenSale-info {
+    position: relative;
+    width: 976px;
+    margin: 0 auto;
+
+    @include pc-md {
+      width: 100%;
+    }
+  }
+
+  .tokenSale-image {
+    width: 545px;
+    height: 423px;
+    overflow: hidden;
+    background-image: url(#{$path-image}img-tokenSale-1.png);
+    background-size: 100%;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+
+    @include pc-sm {
+      width: 480px;
+      height: 373px;
+    }
+    @include tablet-lg {
+      width: 510px;
+      height: 396px;
+      margin: 0 auto;
+      margin-bottom: 60px;
+    }
+    @include mobile-lg {
+      width: 80%;
+      height: 0;
+      margin-bottom: 40px;
+      padding-top: 62%;
+      background-size: contain;
+    }
+    @include mobile {
+      width: 100%;
+      padding-top: 78%;
+    }
+  }
+  .tokenSale-image-2 {
+    position: absolute;
+    top: 135px;
+    right: 0;
+    width: 500px;
+    height: 91px;
+    background-image: url(#{$path-image}img-tokenSale-2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    @include pc-sm {
+      top: 120px;
+      right: 14px;
+      width: 480px;
+      height: 87px;
+    }
+    @include tablet-lg {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 500px;
+      height: 91px;
+      margin: 0 auto;
+    }
+    @include mobile-lg {
+      width: 80%;
+      height: 0;
+      padding-top: 15%;
+      background-size: contain;
+    }
+    @include mobile {
+      width: 100%;
+      padding-top: 19%;
+    }
+  }
+
+}

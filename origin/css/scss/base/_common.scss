@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/*!  
+*   COMMON STYLE
+*/
+
+
+
+html, body {
+    position: relative;
+    min-height: 100%;
+    height: 100%; 
+    font-size: 100%;
+    @include font-main;
+    line-height: 1.3;
+    ///
+    width: 100%;
+    //min-width: 1020px;
+    ///
+}
+
+.wrap {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.grid {
+    width: 100%;
+    height: 100%;
+    max-width: 960px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    @include pc-sm {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+    @include tablet {
+        padding: 0 25px;
+    }
+    @include mobile {
+      padding: 0 20px;
+    }
+}
+
+::-moz-selection { 
+    background-color: #acf2ff; 
+}
+
+::selection {
+    background-color: #acf2ff;
+}
+
+
+.noScroll {
+    height: 100%;
+    overflow: hidden;
+
+    .header {
+        position: fixed;
+    }
+    .header-container {
+        margin-right: 15px;
+    }
+}
+
+[class^=deco-],
+[class^=bg-],
+[class^=deco-mini-]
+[class$=-image],
+[class$=-img] {
+    user-select: none;
+    // touch-action: none;
+    // -ms-touch-action: none;
+    // pointer-events: none;
+    // -webkit-touch-callout: none;
+}
+
+.br-pc-lg {
+    display: block;
+
+    @include pc-md {
+        display: none;
+    }
+}
+
+.br-pc-md { //pc-md 이상에서만 보임
+    display: block;
+
+    @include pc-sm {
+        display: none;
+    }
+}
+
+.br-pc-sm { //pc-sm 이상에서만 보임
+    display: block;
+
+    @include tablet-lg {
+        display: none;
+    }
+}
+
+.br-ta-lg { //tablet-lg 이상에서만 보임
+    display: block;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.br-ta { //tablet 이상에서만 보임
+    display: block;
+
+    @include mobile-lg {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+
+.br-only-mo { //ONLY mobile 이하에서만 보임
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+}

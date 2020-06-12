@@ -1,0 +1,716 @@
+@charset "utf-8";
+
+/*!  
+*   VISUAL STYLE
+*/
+
+////// 변수 //////
+$pc-width: 530px;
+$ta-lg-width: 510px;
+$ta-width: 490px;
+
+
+.section.visual {
+  position: relative;
+  width: 100%;
+  height: 980px;
+  @include horizontal-gradient(#31d6f2, #10a8c2);
+
+    // ==============
+    // === 반응형 ====
+    @include tablet-lg {
+      height: 870px;
+    }
+    @include tablet {
+      height: 780px;
+    }
+    @include mobile {
+      height: 580px;
+    }
+  // ==============
+
+  & > .gird {
+    position: relative;
+  }
+  .deco-visual {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    top: 132px;
+    width: 950px;
+    height: 760px;
+    margin-left: 34px;
+    transform: translateX(-50%);
+    // transform: translateY(40px) translateX(-50%);
+    // transition: transform .7s;
+    background-image: url(#{$path-image}deco-visual.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include pc-sm {
+        top: 144px;
+        width: 860px;
+        height: 688px;
+      }
+      @include tablet-lg {
+        top: 90px;
+        width: 780px;
+        height: 624px;
+      }
+      @include tablet {
+        top: 70px;
+        width: 680px;
+        height: 544px; 
+      }
+      @include mobile {
+        background-image: url(#{$path-image}deco-visual-mo.png);
+        top: 80px;
+        width: 440px;
+        height: 357px;
+        margin-left: 14px;
+      }
+    // ==============
+  }
+
+  .container {
+    z-index: 10;
+    position: absolute;
+    width: $pc-width;
+    left: 50%;
+    bottom: 106px;
+    transform: translateX(-50%);
+    // transform: translateY(40px) translateX(-50%);
+    // transition: transform .7s;
+    box-sizing: border-box;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: $ta-lg-width;
+        bottom: 90px;
+      }
+      @include tablet {
+        width: 480px;
+      }
+      @include mobile {
+        bottom: 25px;
+        width: 100%;
+        padding: 0 20px;
+      }
+    // ==============
+
+    .section-title {
+      overflow: visible;
+    }
+  }
+
+  .visual-logo {
+    display: none;
+  }
+
+  .visual-logo-svg {
+    display: block;
+    overflow: visible;
+    width: ($pc-width);
+    height: 113px;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: $ta-lg-width;
+        height: 109px;
+      }
+      @include tablet {
+        width: $ta-width;
+        height: 105px;
+      }
+      @include mobile {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+      }
+    // ==============
+
+    .st0 {
+      will-change: transform;
+      transform: translateZ(0);
+      transition: transform 30s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) //easeInOutBack
+    }
+  }
+
+  .title-small { //"support decentral ar world"
+    width: ($pc-width - 6);
+    height: 39px;
+    margin-top: 16px;
+    margin-bottom: 36px;
+    background-image: url(#{$path-image}title-visual.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        width: ($ta-lg-width - 6);
+        height: 32px;
+      }
+      @include tablet {
+        width: ($ta-width - 6);
+        height: 30px;
+      }
+      @include mobile {
+        width: 80%;
+        height: auto;
+        padding-top: 7%;
+        margin: 10px auto 18px;
+        background-size: contain;
+      }
+    // ==============
+
+  }
+
+  .visual-form {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    label {
+      display: none;
+    }
+
+    .form-email {
+      position: relative;
+      width: 100%;
+      height: 70px;
+      font-size: 20px;
+      color: #0c8094;
+      font-weight: 600;
+      padding-left: 32px;
+      padding-right: 76px;
+      border-radius: 35px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: 1px solid #0dc8e8;
+      transition: background-color .3s;
+
+      &:focus,
+      &:valid {
+        outline: 0;
+        // background-color: rgba(174, 243, 255, 0.9);
+        // transition: background-color .3s;
+
+        & + .form-button {
+          background-color: #fff;
+          transition: background-color .3s;
+        }
+      }
+
+      // ==============
+      // === 반응형 ====
+        // @include tablet-lg {
+        //   height: 64px;
+        // }
+        @include mobile {
+          height: 60px;
+          padding-right: 68px;
+        }
+      // ==============
+    }
+
+    .form-button {
+      z-index: 1;
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      width: 54px;
+      height: 54px;
+      font-size: 18px;
+      border-radius: 35px;
+      background-color: #99e5f2;
+      background-image: url(#{$path-image}icon-subscribe.svg);
+      background-repeat: no-repeat;
+      background-size: 31px 24px;
+      background-position: 50% 14px;
+      cursor: pointer;
+      transition: background-color .3s;
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        background-color: #fff;
+        transition: background-color .3s;
+      }
+
+      // ==============
+      // === 반응형 ====
+        // @include tablet-lg {
+        //   top: 7px;
+        //   width: 50px;
+        //   height: 50px;
+        //   background-size: 29px 22px;
+        // }
+        @include mobile {
+          top: 7px;
+          width: 46px;
+          height: 46px;
+          background-size: 27px 21px;
+          background-position: 50% 12px;
+        }
+      // ==============
+    }
+
+    // ================= //
+    // placeholder style //
+    // ================= //
+
+
+    .form-email {
+
+      $placeholder-size: 17px;
+      $placeholder-color: #0c8094;
+      $placeholder-transition: color .3s, opacity .3s;
+
+      @mixin placeholder {
+        font-size: $placeholder-size;
+        color: $placeholder-color;
+        transition: $placeholder-transition;
+        //font-weight: 400;
+        letter-spacing: 0;
+      }
+
+      &::-webkit-input-placeholder { 
+          @include placeholder;
+
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &:-ms-input-placeholder {
+          @include placeholder;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &:-moz-placeholder {
+        opacity: 1;
+        @include placeholder;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &::-moz-placeholder {
+        opacity: 1;
+        @include placeholder;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      
+      &:focus::-webkit-input-placeholder {
+        color: transparent;
+        transition: $placeholder-transition;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &:focus:-ms-input-placeholder {
+        color: transparent;
+        transition: $placeholder-transition;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &:focus:-moz-placeholder {
+        color: transparent;
+        opacity: 0;
+        transition: $placeholder-transition;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+      &:focus::-moz-placeholder {
+        color: transparent;
+        opacity: 0;
+        transition: $placeholder-transition;
+          ///// 미디어쿼리 /////
+          @include pc-sm {
+            font-size: 18px;
+          }
+          @include tablet-lg {
+            font-size: 16px;
+          }
+      }
+    }
+
+  }
+
+
+}
+
+$time: 2.5s;
+$delay: .5s;
+
+.path_g {
+  @include animation($time, visualTxt_up);
+  animation-delay: $delay;
+}
+.path_e {
+  @include animation($time, visualTxt_down);
+  animation-delay: $delay;
+}
+.path_a_2 {
+  @include animation($time, visualTxt_up);
+  animation-delay: $delay;
+}
+.path_r_2 {
+  @include animation($time, visualTxt_down);
+  animation-delay: $delay;
+}
+ 
+.deco-mini-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  width: 2120px;
+  transform: translateX(-50%);
+  height: 100%;
+  overflow: hidden;
+
+  .circle {
+    position: absolute;
+    background-image: url(#{$path-image}deco-visual-mini-1.png);
+    background-size: 90%; //블러 시 깨짐 현상 때문에
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: all .2s;
+  } 
+
+  .square {
+    position: absolute;
+    background-image: url(#{$path-image}deco-visual-mini-2.png);
+    background-size: 90%; //블러 시 깨짐 현상 때문에
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: all .7s;
+  }
+  
+  .deco-mini-1 { //우측 하단
+    //bottom: -200px;
+    bottom: -400px;
+    right: 0; 
+    width: 560px;
+    height: 560px;
+    opacity: .33;
+    
+  }
+  
+  .deco-mini-2 { //우측 중앙
+    // top: 160px;
+    top: 280px;
+    right: 600px;
+    width: 250px;
+    height: 250px;
+    opacity: .6;
+
+    @include tablet-lg {
+      top: 60px;
+      right: 820px;
+      width: 230px;
+      height: 230px;
+    }
+    @include mobile {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  .deco-mini-3 { //우측 최상단
+    // top: 30px;
+    top: 120px;
+    right: 270px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .deco-mini-4 { //우측 상단 작은 원
+    // top: 220px;
+    top: 300px;
+    right: 186px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .deco-mini-5 { //좌측 최상단 작은 원
+    // top: 58px;
+    top: 128px;
+    left: 426px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .deco-mini-6 { //좌측 하단 큰 원
+    // bottom: 158px;
+    bottom: 58px;
+    left: 198px;
+    width: 320px;
+    height: 320px;
+    opacity: 0.6;
+
+    @include tablet-lg {
+      left: 600px;
+      bottom: 200px;
+      width: 200px;
+      height: 200px;
+    }
+    @include mobile {
+      left: 800px;
+      bottom: 100px;
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  .deco-mini-7 { //우측 네모
+    // top: 424px;
+    top: 494px;
+    right: 412px;
+    width: 62px;
+    height: 62px;
+    opacity: .33;
+
+    @include tablet-lg {
+      right: 760px;
+      top: initial !important;
+      //bottom: 220px;
+      bottom: 180px;
+      width: 56px;
+      height: 56px;
+    }
+    @include mobile {
+      bottom: 80px;
+      right: 860px;
+    }
+  }
+
+  .deco-mini-8 { //좌측 네모
+    // top: 316px;
+    top: 366px;
+    left: 176px;
+    width: 54px;
+    height: 54px;
+  }
+   
+   
+   
+}
+
+
+
+.blur-7 { 
+  filter: url(#blur7); 
+}
+
+.blur-3 { 
+  filter: url(#blur3); 
+}
+
+html[data-agent*="Trident"] .circle {
+  background-image: url(#{$path-image}deco-visual-mini-1-blur.png); //IE에서는 SVG 필터 대신 이미지로 대체
+}
+html[data-agent*="Trident"] .square {
+  background-image: url(#{$path-image}deco-visual-mini-2-blur.png); //IE에서는 SVG 필터 대신 이미지로 대체
+}
+
+
+
+
+.section.visual.on {
+  // .deco-visual {
+  //   transform: translateY(0px) translateX(-50%);
+  //   transition: transform .7s;
+  //   transition-delay: .5s;
+  // }
+  // .container {
+  //   transform: translateY(0px) translateX(-50%);
+  //   transition: transform .7s;
+  //   transition-delay: .9s;
+  // }
+
+  .circle, .square{
+    transition: all 1.4s .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+  
+
+  .deco-mini-5 { //좌측 최상단 작은 원
+    top: 58px;
+    transition-duration: 1.2s;
+    // transition-delay: .27s;
+    animation-name: visual_mini_move_m;
+    animation-duration: 7.5s; 
+    animation-delay: 2s;
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  .deco-mini-3 { //우측 최상단
+    top: 30px;
+    transition-duration: 0.9s;
+    // transition-delay: .43s;
+    animation-name: visual_mini_move_m;
+    animation-duration: 11s; 
+    animation-delay: 1.3s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+  
+
+
+  .deco-mini-4 { //우측 상단 작은 원
+    top: 220px;
+    transition-duration: 1.9s;
+    animation-name: visual_mini_move_l;
+    animation-duration: 8s; 
+    animation-delay: 2.2s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  
+  .deco-mini-2 { //우측 중앙
+    top: 160px;
+    transition-duration: 2s;
+    // transition-delay: .41s;
+    transition-duration: 1.9s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 13s; 
+    animation-delay: 2.7s;
+
+    @include tablet-lg {
+      top: -30px;
+    }
+  }
+
+
+  .deco-mini-7 { //우측 네모
+    top: 424px;
+    transition-duration: 2.6s;
+    animation-name: visual_mini_move_vl;
+    animation-duration: 5s; 
+    animation-delay: 2.8s;
+
+    @include tablet-lg {
+      bottom: 220px;
+    }
+    @include mobile {
+      bottom: 130px;
+    }
+  }
+
+  .deco-mini-8 { //좌측 네모
+    top: 316px;
+    transition-duration: 2.9s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 6s; 
+    animation-delay: 3.5s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+  
+
+
+  .deco-mini-1 { //우측 하단
+    bottom: -200px;
+    transition-duration: 4.2s;
+    // transition-delay: .37s;
+    animation-name: visual_mini_move_h;
+    animation-duration: 12s; 
+    animation-delay: 4.2s;
+
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  .deco-mini-6 { //좌측 하단 큰 원
+    bottom: 158px;
+    transition-duration: 4.4s;
+    // transition-delay: .26s;
+    animation-name: visual_mini_move_vh;
+    animation-duration: 8s; 
+    animation-delay: 4.6s;
+
+    @include tablet-lg {
+      bottom: 270px;
+    }
+    @include mobile {
+      bottom: 190px;
+    }
+  }
+  
+}
+
+
+// .loading {
+//   z-index: 500;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: #e6f5ff;
+//   @include flexbox;
+//   @include justify-content(center);
+//   @include align-items(center);
+// }
+// .loading > svg {
+//    display: block;
+//    width: 50%;
+//    position: relative;
+//    left: 2vw;
+// }

@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - DPOARE
+*/
+
+.section.dpo {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #18b3cd;
+  background-image: url(#{$path-image}bg-dpo.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  & > .grid {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    padding-top: 190px;
+    padding-bottom: 184px;
+    font-size: 18px; // [!] init.
+
+    // ==============
+    // === 반응형 ====
+    @include tablet-lg {
+      padding-top: 120px;
+      padding-bottom: 110px;
+      font-size: 16px;
+    }
+
+    @include tablet {
+      @include flex-wrap(wrap);
+      @include justify-content(flex-start);
+      padding-top: 50px;
+      padding-bottom: 60px;
+      font-size: 15px;
+    }
+
+    @include mobile {
+      // font-size: 13px;
+      font-size: 14px;
+    }
+    // ==============
+  }
+
+  .section-title {
+    position: relative;
+    top: -44px;
+    @include flex-basis(330px);
+
+    // ==============
+    // === 반응형 ====
+    @include tablet-lg {
+      @include flex-basis(270px);
+    }
+    @include tablet {
+      top: 0;
+    }
+    // ==============
+
+    h2 {
+      height: 121px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-dpo.svg);
+      background-repeat: no-repeat;
+      background-position: 0% 0;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          height: 118px;
+          margin-bottom: 60px;
+          width: 165px;
+        }
+        @include mobile {
+          width: 144px;
+          height: 103px;
+          margin-bottom: 50px;
+        }
+      // ==============
+    }
+    .title-small {
+      display: none;
+    }
+
+  } //end of .section-title
+
+  .dpo-text {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    height: 180px;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        width: calc(100% - 20px);
+        height: auto;
+      }
+      @include mobile {
+      }
+    // ==============
+
+    p {
+      max-width: 340px;
+      font-size: 17px;
+      word-break: keep-all;
+      line-height: 155%;
+      //word-wrap: break-word;
+
+      &:nth-child(2) {
+        margin-top: 26px;
+      }
+
+      // ==============
+      // === 반응형 ====
+      @include tablet-lg {
+        max-width: 280px;
+        font-size: 15px;
+        
+        &:nth-child(2) {
+          margin-top: 23px;
+        }
+
+        &:nth-child(3) {
+          margin-left: 10px;
+        }
+      }
+      @include tablet {
+        max-width: 100%;
+        font-size: 14px;
+        
+        &:nth-child(2) {
+          margin-top: 16px;
+        }
+
+        &:nth-child(3) {
+          margin-top: 16px;
+          margin-left: 0px;
+        }
+      }
+      // ==============
+
+    }
+
+    em {
+      font-weight: 800;
+    }
+  } //end of .dpo-text
+
+}

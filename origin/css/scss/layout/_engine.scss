@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+/*!  
+*   SECTION STYLE - Engine
+*/
+
+.section.engine{
+  position: relative;
+
+  & > .grid {
+    position: relative;
+    margin-bottom: -122px; //relative라서 하단 남는 공간 생김
+    top: -13em;
+    font-size: 18px; // [!] init.
+
+    // ==============
+    // === 반응형 ====
+      @include tablet-lg {
+        font-size: 16px;
+      }
+      @include mobile {
+        font-size: 14px;
+      }
+    // ==============
+  }
+  
+  .section-title {
+
+    h2 {
+      width: 130px;
+      height: 68px;
+      @include text-hidden;
+      background-image: url(#{$path-image}title-engine.svg);
+      background-repeat: no-repeat;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          width: 122px;
+          height: 64px;
+        }
+        @include mobile {
+          width: 118px;
+          height: 62px;
+        }
+      // ==============
+    }
+    .title-small {
+      display: none;
+    }
+  } //end of .section-title
+
+  .engine-info {
+    @include flexbox;
+    @include justify-content(space-between);
+    margin-top: 48px;
+
+    // ==============
+    // === 반응형 ====
+      @include tablet {
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+        margin-top: 40px;
+      }
+      @include mobile {
+        margin-top: 44px;
+      }
+    // ==============
+    
+    li {
+      @include flexbox;
+      @include align-items(center);
+      @include flex-direction(column);
+      position: relative;
+      padding-top: 13.111em;
+      @include flex-basis(240px);
+      word-break: keep-all;
+      word-wrap: break-word;
+      box-sizing: border-box;
+
+      // ==============
+      // === 반응형 ====
+        @include tablet {
+          padding-top: 190px;
+        }
+        @include mobile {
+          padding-top: 160px;
+        }
+      // ==============
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 180px;
+        height: 180px;
+        content: '';
+        background-size: 100%;
+
+        // ==============
+        // === 반응형 ====
+          @include tablet-lg {
+            width: 158px;
+            height: 158px;
+          }
+          @include tablet {
+            width: 166px;
+            height: 166px;
+          }
+          @include mobile {
+            width: 134px;
+            height: 134px;
+          }
+        // ==============
+
+      }
+
+      @for $i from 1 through 4 { //background image
+        &:nth-child(#{$i}){
+          &:before {
+            background-image: url(#{$path-image}deco-engine-#{$i}.png);
+          }  
+        }
+      }
+
+      &:nth-child(1) {
+        @include align-items(flex-start);
+
+        // ==============
+        // === 반응형 ====
+          @include tablet {
+            padding-left: 20px;
+          }
+          @include mobile {
+            @include align-items(center);
+            @include flex-basis(50%);
+            padding-left: 0px;
+          }
+        // ==============
+        .info-title,
+        .info-desc {
+          width: 210px;
+          // ==============
+          // === 반응형 ====
+            @include tablet-lg {
+              width: 160px;
+            }
+            @include mobile {
+              width: 134px;
+            }
+            @include mobile-sm {
+              width: 131px;
+            }
+          // ==============
+        }
+      }
+      &:nth-child(2){
+        @include flex-basis(270px);
+
+        // ==============
+        // === 반응형 ====
+          @include tablet-lg {
+            @include flex-basis(258px);
+          }
+          @include tablet {
+            @include align-items(flex-end);
+            padding-right: 20px;
+          }
+          @include mobile {
+            @include align-items(center);
+            @include flex-basis(50%);
+            padding-right: 0px;
+          }
+        // ==============
+        .info-title,
+        .info-desc {
+          width: 194px;
+
+          // ==============
+          // === 반응형 ====
+            @include tablet-lg {
+              width: 172px;
+            }
+            @include mobile {
+              width: 147px;
+            }
+            @include mobile-sm {
+              width: 137px;
+            }
+          // ==============
+        }
+      }
+      &:nth-child(3) {
+        @include flex-basis(270px);
+
+        // ==============
+        // === 반응형 ====
+          @include tablet-lg {
+            @include flex-basis(258px);
+          }
+          @include tablet {
+            @include align-items(flex-start);
+            margin-top: 38px;
+            padding-left: 20px;
+          }
+          @include mobile {
+            @include align-items(center);
+            @include flex-basis(50%);
+            padding-left: 0px;
+          }
+        // ==============
+        .info-title,
+        .info-desc {
+          width: 188px;
+
+          // ==============
+          // === 반응형 ====
+            @include tablet-lg {
+              width: 160px;
+            }
+            @include mobile {
+              width: 138px;
+            }
+          // ==============
+        }
+      }
+      &:nth-child(4) {
+        @include align-items(flex-end);
+
+        // ==============
+        // === 반응형 ====
+          @include tablet {
+            margin-top: 38px;
+            padding-right: 20px;
+          }
+          @include mobile {
+            @include align-items(center);
+            @include flex-basis(50%);
+            padding-right: 0px;
+          }
+        // ==============
+        .info-title,
+        .info-desc {
+          width: 197px;
+
+          // ==============
+          // === 반응형 ====
+            @include tablet-lg {
+              width: 160px;
+            }
+            @include mobile {
+              width: 134px;
+            }
+          // ==============
+        }
+      }
+
+    }
+
+    .info-title {
+      display: block;
+      font-size: 1.1em;
+      font-weight: 800;
+
+      // ==============
+      // === 반응형 ====
+        @include mobile {
+          font-size: 15px;
+        }
+        @include mobile-sm {
+          font-size: 14px;
+        }
+      // ==============
+
+    }
+    .info-desc {
+      margin-top: 1em;
+      font-size: 0.833em;
+      line-height: 150%;
+
+      // ==============
+      // === 반응형 ====
+        @include mobile {
+          font-size: 13px;
+        }
+        @include mobile-sm {
+          font-size: 12px;
+        }
+      // ==============
+    }
+  }
+
+}

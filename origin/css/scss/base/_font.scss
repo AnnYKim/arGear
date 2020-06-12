@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* ! 
+ *  FONT FACE
+ */  
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src: url(#{$path-font}NanumSquareR.eot);
+  src: url(#{$path-font}NanumSquareR.eot?#iefix) format('embedded-opentype'),
+       url(#{$path-font}NanumSquareR.woff) format('woff'),
+       url(#{$path-font}NanumSquareR.ttf) format('truetype');
+ }
+ @font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src: url(#{$path-font}NanumSquareL.eot);
+  src: url(#{$path-font}NanumSquareL.eot?#iefix) format('embedded-opentype'),
+       url(#{$path-font}NanumSquareL.woff) format('woff'),
+       url(#{$path-font}NanumSquareL.ttf) format('truetype');
+ }
+ @font-face {
+  font-family: 'NanumSquare';
+  font-weight: 600;
+  src: url(#{$path-font}NanumSquareB.eot);
+  src: url(#{$path-font}NanumSquareB.eot?#iefix) format('embedded-opentype'),
+       url(#{$path-font}NanumSquareB.woff) format('woff'),
+       url(#{$path-font}NanumSquareB.ttf) format('truetype');
+ }
+ @font-face {
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  src: url(#{$path-font}NanumSquareEB.eot);
+  src: url(#{$path-font}NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+       url(#{$path-font}NanumSquareEB.woff) format('woff'),
+       url(#{$path-font}NanumSquareEB.ttf) format('truetype');
+ }

@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+
+$visualTxtVal: 13px;
+
+@include keyframes(visualTxt_up){
+  50% {
+    transform: translateY(-#{$visualTxtVal});
+  }
+}
+@include keyframes(visualTxt_down){
+  50% {
+    transform: translateY(#{$visualTxtVal});
+  }
+}
+
+@include keyframes(visual_mini_move){
+  50% {
+    transform: translateY(#{$visualTxtVal});
+  }
+}
+
+
+@include keyframes(visual_mini_move_vh) {
+  50% {
+    transform: translateY(90px);
+  }
+}
+
+@include keyframes(visual_mini_move_h) {
+  50% {
+    transform: translateY(70px);
+  }
+
+}
+
+@include keyframes(visual_mini_move_m) {
+  50% {
+    transform: translateY(50px);
+  }
+
+}
+@include keyframes(visual_mini_move_l) {
+  50% {
+    transform: translateY(30px);
+  }
+
+}
+@include keyframes(visual_mini_move_vl) {
+  50% {
+    transform: translateY(15px);
+  }
+
+}
+
+@include keyframes(loading) {
+  50% {
+    transform: translateY(-14px);
+  }
+}
